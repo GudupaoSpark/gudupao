@@ -1,0 +1,51 @@
+
+:root {
+    --body: #fff;
+    --black: #000;
+    --white: #fff;
+    --theme: #166FD3;
+    --theme2: #4E29B7;
+    --header: #222222;
+    --base: #166FD3;
+    --text: #5E5F63;
+    --text2: #8A8C94;
+    --border: #EEEFF4;
+    --border2: #D7D7D7;
+    --button: #1C2539;
+    --button2: #030734;
+    --ratting: #F09815;
+    --bg: #F6F3EE;
+    --bg2: #F6F6F6;
+    --bg3: #F5F6FD;
+    --bg4: #020001;
+    --bg5: #F8F8F8;
+    --bg6: #020626;
+    --bg7: #EDEEEE;
+    --color-gradient-1: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 19.36%, rgba(15, 116, 230, 0.55) 71.26%, #166FD3 100%);
+    --color-gradient-2: linear-gradient(180deg, rgba(0, 0, 0, 0.31) 0%, rgba(0, 0, 0, 0.78) 100%);
+    ---box-shadow: 0px 9px 21px rgba(0, 0, 0, 0.04);
+
+}
+
+// Theme Color - Defualt Colors
+$black: var(--black);
+$white: var(--white);
+$theme-color: var(--theme);
+$theme-color-2: var(--theme2);
+$text-color: var(--text);
+$ratting-color: var(--ratting);
+$text-color-2: var(--text2);
+$header-color: var(--header);
+$border-color: var(--border);
+$border-color-2: var(--border2);
+$button-color: var(--button);
+$bg-color: var(--bg);
+$bg-color-2: var(--bg2);
+$bg-color-3: var(--bg3);
+$bg-color-4: var(--bg4);
+$bg-color-5: var(--bg5);
+$bg-color-6: var(--bg6);
+$bg-color-7: var(--bg7);
+$color-gradient-1: var(--color-gradient-1);
+$color-gradient-2: var(--color-gradient-2);
+$shadow: var(---box-shadow);

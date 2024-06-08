@@ -22,7 +22,7 @@
 
         // Set the recipient email address.
         // Note:  Update this to your desired email address.
-        $recipient = "modinatheme@gmail.com";
+        $recipient = "hi@gudupao.top";
         
 
         // Set the email subject.

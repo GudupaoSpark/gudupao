@@ -25,9 +25,9 @@ Version: 1.0.0
   --bg: #F6F3EE;
   --bg2: #F6F6F6;
   --bg3: #F5F6FD;
-  --bg4: #384753;
+  --bg4: #fff;
   --bg5: #F8F8F8;
-  --bg6: #020626;
+  --bg6: #fff;
   --bg7: #EDEEEE;
   --color-gradient-1: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 19.36%, rgba(15, 116, 230, 0.55) 71.26%, #166FD3 100%);
   --color-gradient-2: linear-gradient(180deg, rgba(0, 0, 0, 0.31) 0%, rgba(0, 0, 0, 0.78) 100%);
@@ -12072,13 +12072,13 @@ p.sticky-label {
 .footer-widgets-wrapper .single-footer-widget .widget-head h5 {
   text-transform: capitalize;
   margin-top: 10px;
-  color: var(--white);
+  color: #5f6464;
 }
 
 .footer-widgets-wrapper .single-footer-widget .widget-head h3 {
   font-size: 32px;
   text-transform: capitalize;
-  color: var(--white);
+  color: #5f6464;
   margin-top: 10px;
 }
 
@@ -12276,7 +12276,7 @@ p.sticky-label {
 
 .footer-widgets-wrapper .single-footer-widget .footer-address-text h5 {
   padding: 20px 0;
-  color: var(--white);
+  color: #5f6464;
 }
 
 .footer-widgets-wrapper .single-footer-widget .footer-address-text h5 a {
@@ -12315,7 +12315,7 @@ p.sticky-label {
 }
 
 .footer-widgets-wrapper .single-footer-widget .footer-apps-items .support-text p {
-  color: var(--white);
+  color: #5f6464;
   margin-bottom: 15px;
 }
 
@@ -12419,12 +12419,12 @@ p.sticky-label {
 }
 
 .newsletter-area .newsletter-title h2 {
-  color: var(--white);
+  color: var(--black);
   margin-bottom: 10px;
 }
 
 .newsletter-area .newsletter-title p {
-  color: var(--white);
+  color: var(--black);
 }
 
 .newsletter-area .shape-1 {
@@ -12530,3 +12530,4 @@ p.sticky-label {
     padding: 18px 25px;
   }
 }
+

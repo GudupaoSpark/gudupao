@@ -7735,7 +7735,7 @@ input.main-search-input::placeholder {
 }
 
 .single-team-items.style-2 .team-content h5 a {
-  color: var(--white);
+  color: var(--black);
 }
 
 .single-team-items.style-2 .team-content h5 a:hover {

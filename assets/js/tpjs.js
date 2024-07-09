@@ -12,7 +12,7 @@ var mouse = {
     CY  : mouse.CY
   },
   imags = [
-    './assets/img/hero/beijing-1.png',
+    './assets/img/hero/beijing-2.png',
     'https://source.unsplash.com/Qdt0KC3O_V8',
     'https://source.unsplash.com/lT7zmkth3o8',
     'https://source.unsplash.com/cUpp1gAEtiU'

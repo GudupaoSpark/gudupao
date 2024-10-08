@@ -1,0 +1,177 @@
+//>>>>> Component Button Here <<<<<//
+.theme-btn {
+	background-color: $theme-color;
+	font-weight: 700;
+	color: $white;
+    @include transition;
+	text-transform: capitalize;
+	position: relative;
+	overflow: hidden;
+    font-size: 16px;
+    padding: 24px 45px;
+    border-radius: 7px;
+    z-index: 9;
+    display: inline-block;
+    line-height: 1;
+
+	i {
+		margin-left: 8px;
+        @include transition;
+
+		@include breakpoint(max-sm) {
+			margin-left: 3px;
+			font-size: 12px;
+		}
+	}
+
+    span {
+        position: relative;
+        z-index: 9;
+    }
+
+	&::after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 50%;
+		height: 0;
+		content: "";
+		background-color: $header-color;
+        @include transition;
+        border-radius: 0 7px 7px 0;
+        z-index: 1;
+	}
+
+	&::before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        height: 0;
+        content: "";
+        background-color: $header-color;
+        @include transition;
+        border-radius: 7px 0 0 7px;
+        z-index: 1;
+	}
+
+	&:hover {
+		color: $white;
+
+		&::before {
+			height: 100%;
+		}
+		&::after {
+			height: 100%;
+		}
+		i {
+			transform: translate(5px);
+		}
+	}
+
+    &.hover-white {
+        &::before,&::after {
+            background-color: $white;
+        }
+
+        &:hover {
+            color: $header-color;
+
+            i {
+                transform: translate(5px);
+                color: $header-color;
+            }
+        }
+    }
+
+    &.bg-white {
+        color: $header-color;
+        //line-height: 1.3;
+
+        &:hover {
+            color: $white;
+
+            i {
+                transform: translate(5px);
+                color: $white;
+            }
+        }
+    }
+
+    &.theme-btn-2 {
+        background-color: $theme-color-2;
+    }
+
+    &.line-height {
+        line-height: 1.3;
+    }
+
+
+    @include breakpoint (max-md){
+        padding: 22px 30px;
+    }
+
+    @include breakpoint (max-sm){
+        padding: 18px 30px;
+
+        span {
+            font-size: 14px;
+        }
+    }
+}
+
+.link-btn {
+    text-transform: capitalize;
+    font-size: 16px;
+    color: $header-color;
+    font-weight: 600;
+    
+
+    span {
+        background-image: linear-gradient($theme-color,$theme-color);
+        background-position: 0 95%;
+        background-repeat: no-repeat;
+        background-size: 0% 2px;
+        display: inline-block;
+        @include transition;
+    }
+
+    i {
+        margin-left: 10px;
+        font-size: 16px;
+        @include transition;
+        font-size: 12px;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        border-radius: 25px;
+        background-color: $theme-color;
+        text-align: center;
+        color: $white;
+    }
+
+    &:hover {
+       span {
+            color: $theme-color;
+            background-size: 100% 1px;
+       }
+    }
+
+    &.link-btn-2 {
+        span {
+            background-image: linear-gradient($theme-color-2,$theme-color-2);
+        }
+
+        i {
+            background-color: $theme-color-2;
+        }
+
+        &:hover {
+            span {
+                color: $theme-color-2;
+            }
+        }
+    }
+}
+
+//>>>>> Component Button End <<<<<//

@@ -1,0 +1,128 @@
+/* --------------------------------------------
+    Template Default Fonts & Fonts Styles
+ ---------------------------------------------- */
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Kode+Mono:wght@400..700&display=swap');
+
+
+$heading-font: "Inter", sans-serif;
+$body-font: "Inter", sans-serif;
+
+//font-family: "Font Awesome 5 Pro";
+$fa: "Font Awesome 5 Pro";
+
+body {
+    font-family: $body-font;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 28px;
+    color: $text-color;
+    background-color: $white;
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+	padding: 0;
+}
+
+input:focus{
+	color: var(--white);
+	outline: none;
+}
+
+input{
+	color: $white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $heading-font;
+    margin: 0px;
+	padding: 0;
+    color: $header-color;
+	text-transform: capitalize;
+	@include transition;
+}
+
+h1 {
+	font-size: 85px;
+	font-weight: 600;
+	line-height: 106%;
+}
+
+h2 {
+	font-size: 48px;
+	line-height: 115%;
+	font-weight: 700;
+
+	@include breakpoint(max-xl){
+		font-size: 42px;
+	}
+
+	@include breakpoint(max-lg){
+		font-size: 32px;
+	}
+	
+	@include breakpoint(max-sm){
+		font-size: 26px;
+	}
+}
+
+h3 {
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 121%;
+
+	@include breakpoint(max-sm){
+		font-size: 20px;
+	}
+}
+
+h4 {
+	font-size: 22px;
+	font-weight: 700;
+
+	@include breakpoint(max-sm){
+		font-size: 20px;
+	}
+}
+
+h5 {
+	font-size: 20px;
+	font-weight: 600;
+}
+
+h6 {
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 156%;
+}
+
+a {
+    text-decoration: none;
+    outline: none !important;
+    cursor: pointer;
+    color: $header-color ;
+	@include transition;
+}
+
+p {
+    margin: 0px;
+	@include transition;
+}
+
+
+

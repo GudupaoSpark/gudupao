@@ -1,0 +1,175 @@
+.marque-section {
+    position: relative;
+
+}
+
+.marquee-wrapper {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+
+    @include breakpoint (max-sm){
+        margin-top: -25px;
+    }
+}
+
+.text-slider {
+    font-size: 114px;
+    height: 110px;
+    line-height: 90px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-right: 20px;
+    color: rgba(61, 66, 92, 0.2);
+
+    &.style-height {
+        height: 65px;
+        line-height: 0;
+    }
+
+    &.style-height-2 {
+        height: 71px;
+        line-height: 0;
+
+        @include breakpoint (max-sm){
+            line-height: 70px;
+        }
+    }
+
+    @include breakpoint(max-sm){
+        font-size: 50px;
+        height: 70px;
+        line-height: 65px;
+        margin-bottom: -10px;
+    }
+
+    &.style-border {
+        position: relative;
+        padding-left: 65px;
+
+        &::before {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            content: "";
+            width: 60px;
+            height: 8px;
+            background-color: rgba(61, 66, 92, 0.2);
+        }
+    }
+}
+
+.marquee-inner {
+    position: absolute;
+    display: inline-flex;
+    width: 200%;
+}
+
+.marquee-list {
+    float: left;
+    width: 50%;
+}
+
+.marquee-item {
+    float: left;
+    transition: animation 0.2s ease-out;
+
+    &.style-2 {
+        .text-slider {
+            text-transform: capitalize;
+            font-size: 65px;
+            color: $header-color;
+            margin-right: 40px;
+            line-height: 0;
+            height: 65px;
+
+            @include breakpoint (max-md){
+                font-size: 42px;
+            }
+        }
+
+        .text-style {
+            @include transition;
+            background-image: linear-gradient($theme-color,$theme-color);
+            background-position: 0 95%;
+            background-repeat: no-repeat;
+            background-size: 0% 2px;
+
+            &:hover {
+                color: $theme-color;
+                background-size: 100% 3px;
+            }
+        }
+
+        .text-style-2 {
+            @include transition;
+            background-image: linear-gradient($theme-color-2,$theme-color-2);
+            background-position: 0 95%;
+            background-repeat: no-repeat;
+            background-size: 0% 2px;
+
+            &:hover {
+                color: $theme-color-2;
+                background-size: 100% 3px;
+            }
+        }
+    }
+
+    &.style-3 {
+        .text-slider {
+            text-transform: uppercase;
+            font-size: 18px;
+            color: $white;
+            margin-right: 20px;
+            line-height: 0;
+            height: 65px;
+        }
+    }
+}
+
+.marque-section {
+    .container-fluid {
+        padding: 0 100px;
+
+        @include breakpoint (max-xl){
+            padding: 0;
+        }
+    }
+}
+
+.marque-section-2 {
+    background-color: $theme-color;
+}
+
+
+
+
+
+
+
+
+.marquee-inner.to-left {
+    animation: marqueeLeft 25s linear infinite;
+}
+
+@keyframes marqueeLeft {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -100%;
+    }
+}
+
+.marquee-inner.to-right {
+    animation: marqueeRight 25s linear infinite;
+}
+
+@keyframes marqueeRight {
+    0% {
+       right : 0;
+    }
+    100% {
+        right: -100%;
+    }
+}

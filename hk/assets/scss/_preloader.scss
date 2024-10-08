@@ -1,0 +1,273 @@
+.preloader {
+    align-items: center;
+    cursor: default;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9999999;
+
+    .animation-preloader {
+        z-index: 1000;
+
+        .spinner {
+            animation: spinner 1s infinite linear;
+            border-radius: 50%;
+            border: 3px solid rgba(0, 0, 0, 0.2);
+            border-top-color: $theme-color;
+            height: 9em;
+            margin: 0 auto 3.5em auto;
+            width: 9em;
+
+            @media (max-width: 767px) {
+                width: 7.5em;
+                height: 7.5em;
+                margin: 0 auto 1.5em auto;
+            }
+        }
+
+        .txt-loading {
+            font: bold 5em $heading-font, $body-font;
+            text-align: center;
+            user-select: none;
+
+            @media (max-width: 767px) {
+                font-size: 2.5em;
+            }
+
+            .letters-loading {
+                color: $theme-color;
+                position: relative;
+
+                &:nth-child(2):before {
+                    animation-delay: 0.2s;
+                }
+
+                &:nth-child(3):before {
+                    animation-delay: 0.4s;
+                }
+
+                &:nth-child(4):before {
+                    animation-delay: 0.6s;
+                }
+
+                &:nth-child(5):before {
+                    animation-delay: 0.8s;
+                }
+
+                &:nth-child(6):before {
+                    animation-delay: 1s;
+                }
+
+                &:nth-child(7):before {
+                    animation-delay: 1.2s;
+                }
+
+                &:nth-child(8):before {
+                    animation-delay: 1.4s;
+                }
+
+                &::before {
+                    animation: letters-loading 4s infinite;
+                    color: $header-color;
+                    content: attr(data-text-preloader);
+                    left: 0;
+                    opacity: 0;
+                    font-family: $heading-font;
+                    position: absolute;
+                    top: -3px;
+                    transform: rotateY(-90deg);
+                }
+            }
+        }
+    }
+
+    p {
+        font-size: 15px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 8px;
+        color: $theme-color;
+    }
+
+    .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 0;
+        z-index: 1;
+        pointer-events: none;
+
+        .row {
+            height: 100%;
+        }
+
+        .loader-section {
+            padding: 0px;
+
+            .bg {
+                background-color: #fff;
+                height: 100%;
+                left: 0;
+                width: 100%;
+                transition: all 800ms cubic-bezier(0.77, 0, 0.175, 1);
+            }
+        }
+    }
+
+    &.loaded {
+        .animation-preloader {
+            opacity: 0;
+            transition: 0.3s ease-out;
+        }
+
+        .loader-section {
+            .bg {
+                width: 0;
+                transition: 0.7s 0.3s allcubic-bezier(0.1, 0.1, 0.1, 1);
+            }
+        }
+    }
+}
+
+.search-wrap {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999999;
+	background-color: rgba(255, 255, 255, 0.9);
+	.search-inner {
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+
+	.search-cell {
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		transform: translateY(-50%);
+	}
+
+	.search-field-holder {
+		width: 50%;
+		margin: auto;
+		position: relative;
+		animation: slideInUp 0.3s;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.search-wrap .search-field-holder {
+		width: 70%;
+	}
+}
+@media (max-width: 575px) {
+	.search-wrap .search-field-holder {
+		width: 80%;
+	}
+}
+.search-wrap .main-search-input {
+	width: 100%;
+	height: 70px;
+	border: 0;
+	padding: 0 50px;
+	text-transform: capitalize;
+	background: transparent;
+	font-size: 25px;
+	color: $header-color;
+	border-bottom: 2px solid $header-color;
+	text-align: center;
+	letter-spacing: 2px;
+}
+@media (max-width: 575px) {
+	.search-wrap .main-search-input {
+		height: 50px;
+		padding: 0 0;
+		line-height: 50px;
+		font-size: 18px;
+	}
+}
+
+.search-wrap input.form-control,
+.search-wrap input.form-control:focus {
+	background-color: $header-color;
+}
+
+input.main-search-input::placeholder {
+	color: $header-color;
+	opacity: 1;
+	font-size: 25px;
+}
+@media (max-width: 575px) {
+	input.main-search-input::placeholder {
+		font-size: 18px;
+	}
+}
+.search-close {
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	font-size: 30px;
+	color: $theme-color;
+	cursor: pointer;
+}
+
+
+//>>>>> Mouse Cursor Start <<<<<//
+.mouse-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    visibility: hidden;
+
+    @include breakpoint (max-md){
+        display: none;
+    }
+}
+.cursor-inner {
+    width: 6px;
+    height: 6px;
+    z-index: 10000001;
+    background-color: $theme-color;
+    -webkit-transition: width 0.3s ease-in-out, height 0.3s ease-in-out, margin 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    -o-transition: width 0.3s ease-in-out, height 0.3s ease-in-out, margin 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out, margin 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.cursor-inner.cursor-hover {
+    margin-left: -35px;
+    margin-top: -35px;
+    width: 70px;
+    height: 70px;
+    background-color: $theme-color;
+    opacity: 0.3;
+}
+.cursor-outer {
+    margin-left: -12px;
+    margin-top: -12px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $theme-color;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 10000000;
+    opacity: 0.5;
+    -webkit-transition: all 0.08s ease-out;
+    -o-transition: all 0.08s ease-out;
+    transition: all 0.08s ease-out;
+}
+.cursor-outer.cursor-hover {
+    opacity: 0;
+}

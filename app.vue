@@ -7,6 +7,7 @@
 </template>
 
 <script setup>
+
 // 全局 SEO 和性能优化
 useHead({
   htmlAttrs: {

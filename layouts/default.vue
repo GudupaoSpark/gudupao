@@ -87,6 +87,9 @@
           >
             {{ item.label }}
           </NuxtLink>
+          <div class="flex justify-center px-4 py-3">
+            <LanguageSwitcher />
+          </div>
         </div>
       </nav>
     </header>
@@ -100,18 +103,31 @@
     <footer class="bg-gray-800 text-white py-8">
       <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <h3 class="text-xl font-bold mb-4">关于我们</h3>
-          <p>古都炮科技是一家专注于创新技术解决方案的科技公司，致力于为客户提供高质量、高效率的软件开发和技术服务。</p>
+          <h3 class="text-xl font-bold mb-4">{{ $t('footer.links') }}</h3>
+          <ul class="space-y-2">
+            <li v-for="link in footerLinks" :key="link.to">
+              <NuxtLink
+                :to="link.to"
+                class="text-gray-300 hover:text-white transition-colors relative"
+                :target="link.external ? '_blank' : '_self'"
+              >
+                {{ link.label }}
+                <span v-if="link.external" class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 text-[0.6rem]">
+                  ↗
+                </span>
+              </NuxtLink>
+            </li>
+          </ul>
         </div>
         
         <div>
-          <h3 class="text-xl font-bold mb-4">联系方式</h3>
-          <p>地址：上海市浦东新区</p>
-          <p>邮箱：offical@gudupao.top</p>
+          <h3 class="text-xl font-bold mb-4">{{ $t("footer.cus") }}</h3>
+          <p>{{ $t("footer.address")}}广东省广州市花都区</p>
+          <p>{{ $t("footer.em")}}offical@gudupao.top</p>
         </div>
         
         <div>
-          <h3 class="text-xl font-bold mb-4">社交媒体</h3>
+          <h3 class="text-xl font-bold mb-4">{{ $t("footer.social") }}</h3>
           <div class="flex space-x-4">
             <a href="https://www.youtube.com/@gudupaospark" target="_blank" class="text-white hover:text-blue-400">
               <i class="fab fa-youtube"></i>
@@ -130,7 +146,7 @@
       </div>
       
       <div class="text-center mt-8 border-t border-gray-700 pt-4">
-        © {{ new Date().getFullYear() }} Gudupao. 保留所有权利。
+        © 2023~{{ new Date().getFullYear() }} {{ $t("footer.cr")}}
       </div>
     </footer>
   </div>
@@ -145,10 +161,20 @@ import LanguageSwitcher from '~/components/LanguageSwitcher.vue'
 const { t } = useI18n()
 
 const navItems = [
-  { to: '/', label: t('common.home') },
-  { to: '/about', label: t('common.about') },
-  { to: '/service', label: t('common.services') },
-  { to: '/contact', label: t('common.contact') }
+  { to: '/', label: t('header.home') },
+  { to: '/about', label: t('header.about') },
+  { to: '/service', label: t('header.services') },
+  { to: '/contact', label: t('header.contact') }
+]
+
+const footerLinks = [
+  { to: '/about', label: t('header.about') },
+  { to: '/service', label: t('header.services') },
+  { to: '/contact', label: t('header.contact') },
+  { to: 'https://www.youtube.com/@gudupaospark', label: 'YouTube', external: true },
+  { to: 'https://x.com/GudupaoSpark', label: 'Twitter', external: true },
+  { to: 'http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=ejwJJmG_3G67qOZlt5lelKpZJ2xI1zTp', label: 'QQ', external: true },
+  { to: 'https://discord.com/invite/7ZQgykhyXs', label: 'Discord', external: true }
 ]
 
 const isMobileMenuOpen = ref(false)

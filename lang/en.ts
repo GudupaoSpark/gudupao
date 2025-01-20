@@ -1,16 +1,21 @@
 export default {
-  common: {
+  header: {
     home: 'Home',
-    about: 'About Us', 
+    about: 'About', 
     services: 'Services',
-    contact: 'Contact Us'
+    contact: 'Contact',
   },
-  home: {
-    title: 'Gudupao - Innovative Technology Solutions',
-    description: 'Committed to providing cutting-edge technological innovation services'
+  footer: {
+    cr: 'GudupaoSpark. All rights reserved.',
+    em: 'Email: ',
+    links: 'Links',
+    cus: 'Contact Us',
+    address: 'Address: ',
+    social: 'Social Media',
   },
-  about: {
-    title: 'About Gudupao',
-    description: 'We are a technology company focused on technological innovation'
+  index:{
+    head: {
+      title: 'Gudupao - Light Up The Future'
+    }
   }
 }

@@ -22,6 +22,7 @@ export default defineNuxtConfig({
       useCookie: true,
       cookieKey: 'i18n_redirected',
       alwaysRedirect: true,
+      redirectOn: 'root',
       // @ts-ignore
       fallbackLocale: 'zh-cn'
     },
@@ -66,5 +67,15 @@ export default defineNuxtConfig({
         }
       ]
     }
-  }
+  },
+
+  compatibilityDate: '2025-01-20',
+
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+
 })

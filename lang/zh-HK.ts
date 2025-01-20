@@ -1,16 +1,23 @@
+import { Head } from "#components";
+
 export default {
-  common: {
+  header: {
     home: '首頁',
-    about: '關於我們',
+    about: '關於',
     services: '服務',
-    contact: '聯繫我們'
+    contact: '聯繫',
   },
-  home: {
-    title: '古都炮 - 創新科技解決方案',
-    description: '致力於提供最先進的技術創新服務'
+  footer: {
+    cr: 'GudupaoSpark. 保留所有權利。',
+    em: '電子郵件：',
+    links: '鏈接',
+    cus: '聯繫我們',
+    address: '地址：',
+    social: '社交媒體',
   },
-  about: {
-    title: '關於古都炮',
-    description: '我們是一家專注於技術創新的科技公司'
+  index:{
+    head: {
+      title: '古都炮 - Light Up The Future'
+    }
   }
 }

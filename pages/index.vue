@@ -1,7 +1,7 @@
 <template>
   <div class="gudupao-homepage">
     <!-- 英雄区域 -->
-    <section class="hero bg-cover bg-center text-white py-20" :style="{ backgroundImage: `url('/assets/img/hero/hero-1.jpg')` }">
+    <section class="hero bg-cover bg-center text-white py-20" :style="{ backgroundImage: `url('/assets/img/hero/1723766855199.jpg')` }">
       <div class="container mx-auto px-4 text-center">
         <h1 class="text-4xl md:text-6xl font-bold mb-6">
           古都炮科技：创新驱动未来
@@ -55,7 +55,7 @@
       <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
         <div class="md:w-1/2 mb-8 md:mb-0 md:mr-12">
           <img 
-            src="/assets/img/about/about.jpg" 
+            src="/assets/img/hero/beijing-2.png" 
             alt="Gudupao Team" 
             class="rounded-lg shadow-lg"
           />
@@ -83,6 +83,17 @@
 </template>
 
 <script setup>
+
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
+useHead({
+  title: t('index.head.title'),
+  meta: [
+    { name: 'description', content: '古都炮科技是一家专注于创新技术解决方案的科技公司，致力于为客户提供高质量、高效率的软件开发和技术服务。' }
+  ]
+})
 const serviceItems = {
   softwareDev: {
     title: '软件开发',

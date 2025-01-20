@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen flex flex-col">
     <!-- 顶部导航栏 -->
-    <header class="bg-white shadow-md">
+    <header class="bg-white shadow-md sticky top-0 z-50">
       <nav class="container mx-auto px-4 py-3 flex justify-between items-center relative">
         <NuxtLink to="/" class="flex items-center">
           <img
@@ -26,7 +26,21 @@
           >
             {{ item.label }}
           </NuxtLink>
-          <LanguageSwitcher class="ml-4" />
+          <button
+            @click="toggleDarkMode"
+            class="ml-4 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+            :title="isDark ? '切换到浅色模式' : '切换到深色模式'"
+          >
+            <i
+              v-if="isDark"
+              class="fas fa-sun text-yellow-400"
+            ></i>
+            <i
+              v-else
+              class="fas fa-moon text-gray-800 dark:text-gray-200"
+            ></i>
+          </button>
+          <LanguageSwitcher class="ml-2" />
         </div>
       
         <!-- 移动端汉堡菜单 -->
@@ -95,7 +109,7 @@
     </header>
 
     <!-- 主内容区域 -->
-    <main class="flex-grow container mx-auto px-4 py-6">
+    <main class="flex-grow container mx-auto px-4 py-6 pt-16">
       <slot />
     </main>
 
@@ -153,10 +167,41 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import LanguageSwitcher from '~/components/LanguageSwitcher.vue'
+
+// 深色模式状态
+const isDark = ref(false)
+
+// 初始化时检查localStorage和系统偏好
+onMounted(() => {
+  const savedMode = localStorage.getItem('theme')
+  if (savedMode) {
+    isDark.value = savedMode === 'dark'
+  } else {
+    isDark.value = window.matchMedia('(prefers-color-scheme: dark)').matches
+  }
+  updateTheme()
+})
+
+// 切换深色模式
+const toggleDarkMode = () => {
+  isDark.value = !isDark.value
+  updateTheme()
+}
+
+// 更新主题
+const updateTheme = () => {
+  if (isDark.value) {
+    document.documentElement.classList.add('dark')
+    localStorage.setItem('theme', 'dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+    localStorage.setItem('theme', 'light')
+  }
+}
 
 const { t } = useI18n()
 

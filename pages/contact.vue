@@ -1,17 +1,12 @@
 <template>
   <div class="contact-page">
-    <!-- 联系页面标题 -->
-    <section class="bg-gray-100 py-16">
-      <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl font-bold mb-6">联系我们</h1>
-        <p class="text-xl text-gray-700 max-w-3xl mx-auto">
-          我们随时准备倾听您的需求，共同探讨技术解决方案
-        </p>
-      </div>
-    </section>
+    <PageHeader
+      title="联系我们"
+      description="我们随时准备倾听您的需求，共同探讨技术解决方案"
+    />
 
     <!-- 联系表单和联系信息 -->
-    <section class="contact-section py-16">
+    <section class="contact-section py-16 bg-white dark:bg-gray-900">
       <div class="container mx-auto px-4">
         <div class="grid md:grid-cols-2 gap-12">
           <!-- 联系表单 -->
@@ -25,7 +20,7 @@
                   id="name" 
                   v-model="formData.name" 
                   required 
-                  class="w-full p-3 border border-gray-300 rounded-lg"
+                  class="w-full p-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg"
                 />
               </div>
               <div>
@@ -35,7 +30,7 @@
                   id="email" 
                   v-model="formData.email" 
                   required 
-                  class="w-full p-3 border border-gray-300 rounded-lg"
+                  class="w-full p-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg"
                 />
               </div>
               <div>
@@ -45,7 +40,7 @@
                   v-model="formData.message" 
                   required 
                   rows="5" 
-                  class="w-full p-3 border border-gray-300 rounded-lg"
+                  class="w-full p-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg"
                 ></textarea>
               </div>
               <button 
@@ -98,6 +93,7 @@
 </template>
 
 <script setup>
+import PageHeader from '~/components/PageHeader.vue'
 import { ref, onMounted } from 'vue'
 
 const formData = ref({

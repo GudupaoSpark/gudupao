@@ -1,14 +1,9 @@
 <template>
   <div class="about-page">
-    <!-- 页面标题和简介 -->
-    <section class="bg-gray-100 py-16">
-      <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl font-bold mb-6">关于古都炮科技</h1>
-        <p class="text-xl text-gray-700 max-w-3xl mx-auto">
-          古都炮科技是一家充满激情和创新精神的科技公司，我们致力于为企业提供尖端的技术解决方案。通过深入理解客户需求，我们将前沿技术转化为切实可行的商业价值。
-        </p>
-      </div>
-    </section>
+    <PageHeader
+      title="关于古都炮科技"
+      description="古都炮科技是一家充满激情和创新精神的科技公司，我们致力于为企业提供尖端的技术解决方案。通过深入理解客户需求，我们将前沿技术转化为切实可行的商业价值。"
+    />
 
     <!-- 公司价值观 -->
     <section class="values py-16">
@@ -18,13 +13,13 @@
           <div 
             v-for="(value, key) in companyValues" 
             :key="key" 
-            class="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow"
+            class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow"
           >
             <div class="text-5xl text-blue-600 mb-6">
               <i :class="getValueIcon(key)"></i>
             </div>
             <h3 class="text-2xl font-semibold mb-4">{{ value.title }}</h3>
-            <p class="text-gray-600">
+            <p class="text-gray-600 dark:text-gray-300">
               {{ value.description }}
             </p>
           </div>
@@ -33,14 +28,14 @@
     </section>
 
     <!-- 团队介绍 -->
-    <section class="team bg-gray-50 py-16">
+    <section class="team bg-gray-50 dark:bg-gray-800 py-16">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">我们的团队</h2>
         <div class="grid md:grid-cols-3 gap-8">
           <div 
             v-for="member in teamMembers" 
             :key="member.name" 
-            class="bg-white rounded-lg overflow-hidden shadow-md"
+            class="bg-white rounded-lg overflow-hidden shadow-md dark:bg-gray-700 hover:shadow-xl transition-shadow"
           >
             <img 
               :src="member.image" 
@@ -49,7 +44,7 @@
             />
             <div class="p-6 text-center">
               <h3 class="text-xl font-semibold mb-2">{{ member.name }}</h3>
-              <p class="text-gray-600 mb-4">{{ member.role }}</p>
+              <p class="text-gray-600 mb-4 dark:text-gray-300">{{ member.role }}</p>
               <div class="flex justify-center space-x-4">
                 <a 
                   v-for="social in member.socials" 
@@ -78,11 +73,11 @@
             class="mb-8 pl-6 relative"
           >
             <div class="absolute w-4 h-4 bg-blue-600 rounded-full -left-6 top-2"></div>
-            <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
               <h3 class="text-2xl font-semibold text-blue-600 mb-4">
                 {{ milestone.year }}
               </h3>
-              <p class="text-gray-700">{{ milestone.description }}</p>
+              <p class="text-gray-700 dark:text-gray-300">{{ milestone.description }}</p>
             </div>
           </div>
         </div>
@@ -92,6 +87,8 @@
 </template>
 
 <script setup>
+import PageHeader from '~/components/PageHeader.vue'
+
 const getValueIcon = (key) => {
   const icons = {
     innovation: 'fas fa-lightbulb',

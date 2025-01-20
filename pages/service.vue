@@ -1,7 +1,7 @@
 <template>
   <div class="services-page">
     <!-- 服务标题和简介 -->
-    <section class="bg-gray-100 py-16">
+    <section class="bg-gray-100 dark:bg-gray-800 py-16">
       <div class="container mx-auto px-4 text-center">
         <h1 class="text-4xl font-bold mb-6">我们的服务</h1>
         <p class="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -17,13 +17,13 @@
           <div 
             v-for="(service, key) in serviceItems" 
             :key="key" 
-            class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow"
+            class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow"
           >
             <div class="text-5xl text-blue-600 mb-6">
               <i :class="getServiceIcon(key)"></i>
             </div>
             <h3 class="text-2xl font-semibold mb-4">{{ service.title }}</h3>
-            <p class="text-gray-600 mb-6">
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
               {{ service.description }}
             </p>
             <div class="space-y-3">
@@ -42,21 +42,21 @@
     </section>
 
     <!-- 技术能力 -->
-    <section class="tech-capabilities bg-blue-50 py-16">
+    <section class="tech-capabilities bg-blue-50 dark:bg-gray-800 py-16">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">我们的技术能力</h2>
         <div class="grid md:grid-cols-4 gap-8">
           <div 
             v-for="tech in technologiesWeUse" 
             :key="tech.name" 
-            class="bg-white p-6 rounded-lg text-center shadow-md hover:shadow-xl transition-shadow"
+            class="bg-white dark:bg-gray-700 p-6 rounded-lg text-center shadow-md hover:shadow-xl transition-shadow"
           >
             <i 
               :class="tech.icon" 
               class="text-6xl text-blue-600 mx-auto mb-4"
             />
             <h3 class="text-xl font-semibold">{{ tech.name }}</h3>
-            <p class="text-gray-600 mt-2">{{ tech.description }}</p>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">{{ tech.description }}</p>
           </div>
         </div>
       </div>
@@ -70,7 +70,7 @@
           <div 
             v-for="project in successProjects" 
             :key="project.name" 
-            class="bg-white rounded-lg overflow-hidden shadow-md"
+            class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md"
           >
             <img 
               :src="project.image" 
@@ -79,7 +79,7 @@
             />
             <div class="p-6">
               <h3 class="text-xl font-semibold mb-3">{{ project.name }}</h3>
-              <p class="text-gray-600 mb-4">{{ project.description }}</p>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">{{ project.description }}</p>
               <div class="flex justify-between items-center">
                 <span class="text-blue-600 font-medium">{{ project.industry }}</span>
                 <a 

@@ -1,0 +1,28 @@
+/* 深色模式基础样式 */
+.dark {
+  /* 背景颜色 */
+  --bg-color: #1a1a1a;
+  
+  /* 文字颜色 */
+  --text-color: #f5f5f5;
+  
+  /* 链接颜色 */
+  --link-color: #60a5fa;
+  
+  /* 边框颜色 */
+  --border-color: #374151;
+}
+
+/* 应用深色模式样式 */
+.dark body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.dark a {
+  color: var(--link-color);
+}
+
+.dark .border {
+  border-color: var(--border-color);
+}

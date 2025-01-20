@@ -1,24 +1,24 @@
 <template>
   <div class="gudupao-homepage">
     <!-- 英雄区域 -->
-    <section class="hero bg-cover bg-center text-white py-20" :style="{ backgroundImage: `url('/assets/img/hero/1723766855199.jpg')` }">
+    <section class="hero bg-cover bg-center text-white py-20 rounded-2xl overflow-hidden" :style="{ backgroundImage: `url('/assets/img/hero/1723766855199.jpg')` }">
       <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6">
-          古都炮科技：创新驱动未来
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
+          古都炮星火
         </h1>
-        <p class="text-xl mb-8 max-w-2xl mx-auto">
-          我们致力于提供高质量的技术解决方案，帮助企业在数字时代实现创新和转型
+        <p class="text-3xl mb-8 max-w-2xl mx-auto text-gray-800 font-bold">
+          Light Up The Future
         </p>
         <div class="flex justify-center space-x-4">
           <NuxtLink 
             to="/about" 
-            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors dark:bg-blue dark:text-white"
           >
             了解我们
           </NuxtLink>
           <NuxtLink 
             to="/contact" 
-            class="bg-white text-blue-600 hover:bg-blue-50 font-bold py-3 px-6 rounded-lg transition-colors"
+            class="bg-white text-blue-600 hover:bg-blue-50 font-bold py-3 px-6 rounded-lg transition-colors dark:bg-white dark:text-gray-900"
           >
             联系我们
           </NuxtLink>
@@ -27,7 +27,7 @@
     </section>
 
     <!-- 服务概览 -->
-    <section class="services py-16 bg-gray-50">
+    <section class="services py-16">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">
           我们的服务
@@ -36,13 +36,13 @@
           <div 
             v-for="(service, key) in serviceItems" 
             :key="key" 
-            class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow"
+            class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow"
           >
             <div class="text-4xl text-blue-600 mb-4">
               <i :class="getServiceIcon(key)"></i>
             </div>
             <h3 class="text-xl font-semibold mb-3">{{ service.title }}</h3>
-            <p class="text-gray-600">
+            <p class="text-gray-600 dark:text-gray-300">
               {{ service.description }}
             </p>
           </div>
@@ -55,9 +55,9 @@
       <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
         <div class="md:w-1/2 mb-8 md:mb-0 md:mr-12">
           <img 
-            src="/assets/img/hero/beijing-2.png" 
-            alt="Gudupao Team" 
-            class="rounded-lg shadow-lg"
+            src="/assets/img/hero/beijing-2.png"
+            alt="Gudupao Team"
+            class="rounded-2xl shadow-lg"
           />
         </div>
         <div class="md:w-1/2">
@@ -71,7 +71,7 @@
             <div 
               v-for="(value, key) in companyValues" 
               :key="key" 
-              class="bg-blue-50 p-4 rounded-lg text-center"
+              class="bg-blue-50 p-4 rounded-lg text-center dark:bg-gray-800"
             >
               <h3 class="font-semibold text-blue-600">{{ value }}</h3>
             </div>

@@ -59,10 +59,13 @@ onMounted(() => {
 </script>
 
 <style>
+/* 导入深色模式样式 */
+@import './assets/css/dark-mode.css';
+
 /* 全局样式 */
 body {
   font-family: 'Inter', sans-serif;
-  @apply text-gray-800 bg-white;
+  @apply text-gray-800 bg-white dark:text-gray-100 dark:bg-gray-900;
 }
 
 /* 平滑滚动和选择样式 */

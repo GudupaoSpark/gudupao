@@ -1,0 +1,369 @@
+.contact-section {
+    position: relative;
+
+    &::before {
+        @include before;
+        background-color: $bg-color-3;
+        left: 20%;
+
+        @include breakpoint (max-xxl){
+            left: 0;
+        }
+    }
+}
+
+.contact-wrapper {
+    position: relative;
+
+    .shape-image {
+        position: absolute;
+        top: -55px;
+        left: -20%;
+
+        @include breakpoint (max-xxl){
+            display: none;
+        }
+    }
+
+    .contact-image {
+        height: 779px;
+        width: 850px;
+        margin-left: -50%;
+        position: relative;
+
+        @include breakpoint (max-xxl){
+            margin-left: 0;
+            max-width: 800px;
+            width: initial;
+            height: 600px;
+        }
+
+        @include breakpoint (max-md){
+           height: 500px;
+        }
+
+        @include breakpoint (max-sm){
+            height: 400px;
+        }
+
+        &::before {
+            @include before;
+            background-color: $theme-color;
+            z-index: -1;
+            top: -55px;
+        }
+
+        .shape-image-2 {
+            position: absolute;
+            top: -22px;
+            left: 0;
+
+            @include breakpoint (max-xxl){
+                display: none;
+            }
+        }
+    }
+}
+
+.contact-form-items {
+
+    .form-clt {
+        input,textarea {
+            padding: 18px 30px;
+            border: none;
+            outline: none;
+            background-color: $white;
+            width: 100%;
+            font-size: 18px;
+            font-weight: 500;
+            color: $header-color;
+            border-radius: 5px;
+
+            @include breakpoint (max-sm){
+               padding: 14px 20px;
+            }
+
+            &::placeholder {
+                color: $header-color;
+            }
+        }
+
+        textarea {
+            padding: 18px 30px 110px;
+
+            @include breakpoint (max-sm){
+                padding: 14px 20px 90px;
+            }
+        }
+    }
+}
+
+.contact-section-2 {
+    position: relative;
+    z-index: 9;
+
+    .contact-image {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        animation: right-image-bounce 3s infinite ease-in-out;
+    }
+}
+
+.contact-wrapper-2 {
+    .contact-content {
+        .contact-info-area {
+            margin-top: 50px;
+
+            .contact-info-items {
+                @include flex;
+                gap: 30px;
+    
+                .icon {
+                    font-size: 32px;
+                    color: $theme-color-2;
+                }
+    
+                .content {
+                    p {
+                        color: $theme-color-2;
+                    }
+
+                    h3 {
+                        font-size: 22px;
+                        margin-top: 5px;
+                        text-transform: initial;
+                    }
+                }
+
+                &.style-2 {
+                    .icon {
+                        color: $theme-color;
+                    }
+
+                    .content {
+                        p {
+                            color: $theme-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact-box {
+    background-color: $white;
+    box-shadow: $shadow;
+    border-radius: 5px;
+    padding: 60px 45px;
+
+    .contact-title {
+        text-align: center;
+        margin-bottom: 30px;
+
+        h3 {
+            font-size: 27px;
+        }
+
+        p {
+            color: $black;
+            margin-top: 5px;
+        }
+    }
+
+    .contact-form-items {
+        .form-clt {
+            position: relative;
+
+            input,textarea {
+                border: 1px solid #E4E4E4;
+                color: $text-color;
+                font-weight: 500;
+
+                &::placeholder {
+                    color: $text-color;
+                }
+
+                @include breakpoint (max-sm){
+                    padding: 12px 20px;
+                }
+            }
+
+            .icon {
+                position: absolute;
+                top: 18px;
+                right: 30px;
+            }
+        }
+
+        textarea {
+            padding: 18px 30px 90px;
+
+            @include breakpoint (max-sm){
+                padding: 12px 20px 90px !important;
+            }
+        }
+
+        .theme-btn-2 {
+            display: inherit;
+            text-align: center;
+            line-height: 1;
+            margin: 0 auto;
+        }
+    }
+}
+
+.contact-main-wrapper {
+    .contact-content {
+        margin-right: 30px;
+
+        @include breakpoint (max-xxl){
+            margin-right: 0;
+        }
+        
+        .info-items {
+            display: flex;
+            gap: 25px;
+    
+            .icon {
+                font-size: 22px;
+                color: $theme-color;
+            }
+    
+            .content {
+                h5 {
+                    margin-bottom: 5px;
+                }
+    
+                a {
+                    color: $text-color;
+                }
+    
+                .social-icon {
+                    gap: 15px;
+                    position: relative;
+                    z-index: 9;
+                    margin-top: 10px;
+    
+                    a {
+                        width: 40px;
+                        height: 40px;
+                        line-height: 40px;
+                        text-align: center;
+                        font-size: 16px;
+                        display: block;
+                        background: transparent;
+                        color: $text-color;
+                        border-radius: 50%;
+                        -webkit-transition: all .4s ease-in-out;
+                        transition: all .4s ease-in-out;
+                        text-align: center;
+                        border: 1px solid $border-color-2;
+        
+                        &:hover {
+                            background-color: $theme-color;
+                            color: $white;
+                            border: 1px solid transparent;
+                        }
+                    }
+                }
+            }
+        }
+        .contact-image {
+            margin-top: 50px;
+    
+            img {
+                @include imgw;
+            }
+        }
+    }
+
+    .contact-form-items {
+        background-color: $bg-color-5;
+        padding: 55px 45px;
+
+        .contact-title {
+            margin-bottom: 30px;
+
+            @include breakpoint (max-sm){
+                margin-bottom: 20px;
+            }
+
+            h3 {
+                font-size: 38px;
+                margin-bottom: 10px;
+
+                @include breakpoint (max-md){
+                    font-size: 32px;
+                }
+
+                @include breakpoint (max-sm){
+                    font-size: 28px;
+                }
+            }
+        }
+
+        .form-clt {
+            position: relative;
+
+            .icon {
+                position: absolute;
+                top: 18px;
+                left: 0;
+
+                @include breakpoint(max-sm){
+                  display: none;
+                }
+
+                i {
+                    color: $header-color;
+                }
+            }
+
+            input,textarea {
+                width: 100%;
+                outline: none;
+                border-radius: 0;
+                border: none;
+                padding: 20px 30px;
+                color: $text-color;
+                background-color: transparent;
+                text-transform: capitalize;
+                font-weight: 500;
+                border-bottom: 1px solid $border-color-2;
+
+                @include breakpoint(max-sm){
+                    padding: 15px 20px;
+                }
+
+                &::placeholder {
+                    color: $text-color;
+                }
+            }
+
+            textarea {
+                padding: 20px 30px 110px;
+            }
+        }
+
+        .theme-btn {
+            i {
+                margin-right: 10px;
+            }
+            &:hover {
+                i {
+                    transform: translate(0);
+                }
+            }
+        }
+    }
+}
+
+.google-map  {
+    iframe {
+        width: 100%;
+        height: 500px;
+    }
+}

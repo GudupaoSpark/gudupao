@@ -1,0 +1,204 @@
+.pricing-items {
+    margin-top: 30px;
+    border-radius: 18px;
+    border: 1px solid #DEE4F3;
+    padding: 55px 40px;
+    @include transition;
+
+    .pricing-header {
+        border-bottom: 1px solid #E9E6E6;
+        padding-bottom: 50px;
+
+        @include breakpoint (max-md){
+            padding-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 52px;
+
+            sub {
+                font-size: 22px;
+                font-weight: 500;
+                margin-left: -10px;
+
+                @include breakpoint (max-md){
+                    font-size: 20px;
+                }
+
+                @include breakpoint (max-sm){
+                    font-size: 18px;
+                }
+            }
+
+            @include breakpoint (max-md){
+                font-size: 40px;
+            }
+
+            @include breakpoint (max-sm){
+                font-size: 36px;
+            }
+        }
+
+        .offer-text-area {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+
+            h4 {
+                font-weight: 500;
+            }
+
+            .offer {
+                font-size: 15px;
+                font-weight: normal;
+                text-align: center;
+                border-radius: 5px;
+                color: $white;
+                background-color: $theme-color-2;
+                padding: 8px 12px;
+                display: inline-block;
+            }
+        }
+    }
+
+    .pricing-list {
+        margin-top: 30px;
+
+        @include breakpoint (max-md){
+           margin-top: 20px;
+        }
+
+        li {
+            font-size: 18px;
+            color: #565463;
+
+            @include breakpoint (max-xl){
+                font-size: 15px;
+            }
+
+            &:not(:last-child){
+                margin-bottom: 20px;
+
+                @include breakpoint (max-md){
+                    margin-bottom: 10px;
+                }
+            }
+
+            i {
+                color: $theme-color-2;
+            }
+        }
+    }
+
+    .pricing-button {
+        margin-top: 50px;
+
+        @include breakpoint (max-md){
+            margin-top: 30px;
+        }
+
+        .theme-btn {
+            background-color: transparent;
+            color: $black;
+            border: 1px solid #F2F2F2;
+            padding: 20px 40px;
+            text-transform: uppercase;
+
+            @include breakpoint (max-xl){
+                padding: 22px 40px;
+                font-size: 16px;
+            }
+
+            @include breakpoint (max-lg){
+                padding: 20px 25px;
+                font-size: 14px;
+            }
+
+            i {
+                @include transition;
+                color: $black;
+            }
+
+            &:hover {
+                &::before,&::after {
+                    background-color: $theme-color-2;
+                }
+
+                color: $white;
+
+                i {
+                    color: $white
+                }
+            }
+        }
+    }
+
+    &:hover {
+        transform: translateY(-10px);
+    }
+
+    &.active {
+        background-color: $theme-color-2;
+
+        .pricing-header {
+            border-bottom: 1px solid #ffffff1a;
+    
+            h2 {
+                color: $white;
+    
+                sub {
+                    color: $white;
+                }
+            }
+    
+            .offer-text-area {
+
+                h4 {
+                    color: $white;
+                }
+    
+                .offer {
+                    color: $white;
+                    background: rgba(255, 255, 255, 0.15);
+                }
+            }
+        }
+
+        .pricing-list {
+            li {
+               color: $white;
+    
+                i {
+                    color: $white;
+                }
+            }
+        }
+
+        .pricing-button {
+            margin-top: 50px;
+    
+            .theme-btn {
+                background-color: $white;
+                color: $black;
+                border: 1px solid transparent;
+    
+                i {
+                    color: $black;
+                }
+    
+                &:hover {
+                    &::before,&::after {
+                        background-color: $black;
+                    }
+
+                    border: 1px solid $black;
+                    color: $white;
+    
+                    i {
+                        color: $white
+                    }
+                }
+            }
+        }
+    }
+}

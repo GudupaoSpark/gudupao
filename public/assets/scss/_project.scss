@@ -1,0 +1,628 @@
+.case-studies-1{
+    position: relative;
+
+    &::before {
+        @include before;
+        background-color: $bg-color;
+        top: 70%;
+    }
+}
+.case-studies-wrapper {
+    .case-studies-content-area {
+        margin-right: -200px;
+        position: relative;
+        z-index: 9;
+
+        @include breakpoint (max-xxl){
+            margin-right: -100px;
+        }
+
+        @include breakpoint (max-xl){
+            margin-right: 0;
+        }
+
+        .case-studies-items {
+            padding: 160px 100px;
+            background-color: $theme-color;
+            margin-top: 50px;
+            position: relative;
+
+            &::before {
+                width: 0px;
+                height: 0;
+                border-top: 55px solid $theme-color;
+                border-left: 200px solid transparent;
+                content: "";
+                right: 0px;
+                position: absolute;
+                top: -53px;
+                transform: rotate(-181deg);
+            }
+
+            @include breakpoint (max-xxl){
+                padding: 120px 60px;
+            }
+
+            @include breakpoint (max-xl){
+                padding: 100px 80px;
+            }
+
+            @include breakpoint (max-lg){
+                padding: 80px 50px;
+            }
+
+            @include breakpoint (max-md){
+                padding: 60px 40px;
+            }
+    
+            .case-studies-content {
+                @include flex;
+                justify-content: space-between;
+
+                @include breakpoint (max-md){
+                   gap: 30px;
+                   flex-wrap: wrap;
+                }
+    
+                &:not(:last-child){
+                    margin-bottom: 60px;
+
+                    @include breakpoint (max-md){
+                       margin-bottom: 30px;
+                    }
+                }
+    
+                .content {
+                    h5 {
+                        color: $white;
+                    }
+    
+                    h3 {
+                        
+                        a {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .case-studies-image {
+        width: 878px;
+        height: 933px;
+        margin-top: -80px;
+        position: relative;
+
+        @include breakpoint (max-xxl){
+          margin-top: 0;
+        }
+
+        @include breakpoint (max-xl){
+            max-width: 1000px;
+            width: initial;
+            height: 600px;
+        }
+
+        @include breakpoint (max-md){
+           height: 400px;
+        }
+
+        @include breakpoint (max-sm){
+            height: 400px;
+         }
+
+         img {
+            @include imgw;
+            object-fit: cover;
+         }
+
+        .icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 9;
+            color: $theme-color;
+            font-size: 160px;
+            transform: rotate(45deg) translate(-50%,-5%);
+
+            @include breakpoint (max-xxl){
+                font-size: 100px;
+            }
+
+            @include breakpoint (max-md){
+                font-size: 70px;
+            }
+        }
+    }
+}
+
+.case-studies-wrapper-2 {
+    padding: 0 50px;
+
+    @include breakpoint (max-xl){
+        padding: 0;
+    }
+
+    .case-studies-items {
+        margin-top: 30px !important;
+        overflow: hidden;
+
+        .case-studies-image {
+            position: relative;
+
+            &::before {
+               background-image: $color-gradient-1;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                content: "";
+                overflow: hidden;
+                opacity: 0;
+                -webkit-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+                visibility: hidden;
+                content: "";
+            }
+
+            img {
+                @include imgw;
+            }
+
+            .case-studies-content {
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+                right: 20px;
+                padding: 30px 35px;
+                background-color: $white;
+                border-radius: 8px;
+                @include transition;
+
+                @include breakpoint (max-sm){
+                    left: 10px;
+                    right: 10px;
+                    bottom: 20px;
+                    padding: 25px;
+                }
+
+                p {
+                    color: $theme-color;
+                    font-size: 14px;
+                    font-weight: 600;
+                    margin-bottom: 10px;
+                    text-transform: capitalize;
+                }
+            }
+
+            .icon {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                line-height: 95px;
+                background-color: $white;
+                text-align: center;
+                color: $theme-color;
+                font-size: 20px;
+                transform: translate(-50%,-50%) rotate(-40deg);
+                @include transition;
+                opacity: 0;
+                visibility: hidden;
+
+                @include breakpoint (max-sm){
+                    width: 60px;
+                    height: 60px;
+                    line-height: 65px;
+                }
+
+                &:hover {
+                    background-color: $theme-color;
+                    color: $white;
+                    transform: translate(-50%,-50%) rotate(0);
+                }
+            }
+        }
+
+        &:hover {
+            .case-studies-image {
+                &::before {
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                .icon {
+                    opacity: 1;
+                    visibility: visible;
+                    top: 50%;
+                }
+
+                .case-studies-content {
+                    background-color: transparent;
+
+                    h4 {
+                        a {
+                            color: $white;
+                        }
+                    }
+
+                    p {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.case-studies-carousel-active, .case-studies-carousel-active-2 {
+    .slick-slide {
+        margin: 0 15px;
+    }
+
+    .slick-list {
+        margin: 0 -15px;
+    }
+
+    .case-study-items.slick-slide.slick-current.slick-active {
+        .case-study-image {
+            filter: initial;
+        }
+
+        .case-study-content {
+            h3 {
+                a {
+                    color: $theme-color-2;
+                }
+            }
+
+            .icon {
+                background-color: $theme-color-2;
+                color: $white;
+                transform: rotate(0);
+            }
+        }
+    }
+}
+
+.case-study {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F6F6F6 100%);
+}
+
+.case-study-wrapper {
+    padding: 0 70px;
+    margin-bottom: -24px;
+
+    @include breakpoint (max-xl){
+        padding: 0;
+    }
+
+    .case-study-items {
+        margin-top: 30px !important;
+
+        .case-study-image {
+            filter: grayscale(100%);
+            @include transition;
+
+            img {
+                @include imgw;
+            }
+        }
+
+        .case-study-content {
+            padding: 20px 15px;
+            position: relative;
+
+            h3 {
+                font-size: 27px;
+                margin-bottom: 5px;
+
+                @include breakpoint (max-lg){
+                    font-size: 22px;
+                }
+
+                @include breakpoint (max-md){
+                    font-size: 20px;
+                }
+
+                a {
+                    &:hover {
+                        color: $theme-color-2;
+                    }
+                }
+            }
+
+            .icon {
+                position: absolute;
+                top: 30px;
+                right: 15px;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                background-color: $white;
+                border-radius: 50%;
+                box-shadow: $shadow;
+                display: inline-block;
+                text-align: center;
+                color: $theme-color-2;
+                transform: rotate(-40deg);
+                @include transition;
+
+                &:hover {
+                    background-color: $theme-color-2;
+                    color: $white;
+                    transform: rotate(0);
+                }
+            }
+        }
+
+        &:hover, .active {
+            .case-study-image {
+                filter: initial;
+            }
+
+            .case-study-content {
+                h3 {
+                    a {
+                        color: $theme-color-2;
+                    }
+                }
+    
+                .icon {
+                    background-color: $theme-color-2;
+                    color: $white;
+                    transform: rotate(0);
+                }
+            }
+        }
+    }
+}
+
+.project-image {
+    position: relative;
+    height: 450px;
+
+    img {
+        @include imgw;
+        object-fit: cover;
+    }
+
+    &::before {
+        background-image: $color-gradient-1;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        overflow: hidden;
+        opacity: 0;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        visibility: hidden;
+        content: "";
+    }
+
+    .icon {
+        font-size: 60px;
+        color: $white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        @include transition;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .project-content {
+        position: absolute;
+        bottom: -50px;
+        left: 50px;
+        opacity: 0;
+        visibility: hidden;
+        @include transition;
+
+        h3 {
+            font-size: 27px;
+            
+            a {
+                color: $white;
+            }
+        }
+
+        p {
+            color: $white;
+            margin-top: 5px;
+        }
+    }
+
+    &:hover {
+        &::before {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .icon {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .project-content {
+            bottom: 50px;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.project-details-wrapper {
+    .project-title-content {
+        margin-top: -5px;  
+        .text  {
+            margin-bottom: 10px;
+            color: $theme-color;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        h2 {
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        p {
+            margin-bottom: 30px;
+        }
+    }
+
+    .details-info {
+        padding: 50px;
+        background-color: #F5FAFF;
+
+        .info-items {
+            h5 {
+                margin-bottom: 5px;
+            }
+
+            a {
+                color: $theme-color;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .project-details-image {
+        margin-top: 60px;
+
+        img {
+            @include imgw;
+        }
+
+        .details-image {
+            height: 505px;
+            
+            img {
+                @include imgw;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .project-details-content {
+        margin-top: 60px;
+        padding-bottom: 60px;
+        border-bottom: 1px solid $border-color-2;
+
+        .title-content {
+            h2 {
+                font-size: 38px;
+                font-weight: 600;
+            }
+        }
+
+        .details-content {
+            .list-items {
+                @include flex;
+                gap: 70px;
+                margin-top: 30px;
+
+                li {
+                    font-weight: 600;
+                    color: $header-color;
+
+                    &:not(:last-child){
+                        margin-bottom: 10px;
+                    }
+
+                    i {
+                        margin-right: 5px;
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
+
+        &.style-2 {
+            border: none;
+
+            .details-content {
+                .list-items-area {
+                    margin-top: 30px;
+
+                    .icon {
+                       font-size: 20px;
+                       font-weight: 600;
+                       color: $header-color;
+                       margin-bottom: 10px;
+
+                       i {
+                          color: $theme-color;
+                          font-size: 24px;
+                          margin-right: 10px;
+                       }
+                    }
+
+                    p {
+                        padding-right: 100px;
+                    }
+                }
+            }
+        }
+    }
+
+    .previous-button {
+        margin-top: 60px;
+        @include flex;
+        justify-content: space-between;
+
+        .preview-button {
+            i {
+                font-size: 14px;
+                margin-left: 5px;
+            }
+
+            h4 {
+                margin-top: 5px;
+                font-weight: 600;
+
+                a {
+                    background-image: linear-gradient($theme-color,$theme-color);
+                    background-position: 0 95%;
+                    background-repeat: no-repeat;
+                    background-size: 0% 2px;
+                    //display: inline-block;
+                    @include transition;
+    
+                    &:hover {
+                        color: $theme-color;
+                        background-size: 100% 2px;
+                    }
+                }
+            }
+
+            &.style-2 {
+                text-align: right;
+            }
+        }
+
+        .icon {
+            font-size: 32px;
+            color: $theme-color;
+        }
+    }
+}

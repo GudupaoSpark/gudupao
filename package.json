@@ -13,14 +13,16 @@
     "@heroicons/vue": "^2.2.0",
     "@nuxtjs/i18n": "^8.5.6",
     "@nuxtjs/tailwindcss": "^6.13.2",
-    "@tsparticles/engine": "^3.8.1",
     "@tsparticles/vue3": "^3.0.1",
     "@vueuse/motion": "^3.0.3",
     "nuxt": "^3.15.4",
+    "particles.js": "^2.0.0",
+    "tsparticles": "^2.9.3",
     "twemoji": "^14.0.2",
     "vue": "latest",
     "vue-i18n": "11.0.0-rc.1",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "vue3-particles": "2.9.3"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1"

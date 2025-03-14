@@ -8,7 +8,7 @@ export default defineNuxtPlugin(({ vueApp }) => {
   const i18n = createI18n({
     legacy: false,
     globalInjection: true,
-    locale: 'en-US',           // 修改默认语言为英语
+    locale: navigator.language || 'en-US', // 修改默认语言为自动识别
     fallbackLocale: 'en-US',   // 回退语言也设置为英语
     messages: {
       'zh-CN': zhCN,

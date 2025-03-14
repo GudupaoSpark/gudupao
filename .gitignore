@@ -12,64 +12,13 @@ node_modules
 # Logs
 logs
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
-# Environment Variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# IDE / Editor directories and files
-.idea
-.vscode
-*.swp
-*.swo
-*~
-
-# OS generated files
+# Misc
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+.fleet
+.idea
 
-# Typescript
-*.tsbuildinfo
-
-# Yarn
-.yarn/*
-!.yarn/releases
-!.yarn/plugins
-
-# Temporary files
-*.tmp
-*.bak
-*.swp
-
-# Build artifacts
-build
-coverage
-
-# Local development configuration
-.local
-.vercel
-.netlify
-.firebase
-
-# Backup files
-*.bak
-*.gho
-*.ori
-*.orig
-*.tmp
-
-# Miscellaneous
-.history
-.svn
-.hg
+# Local env files
+.env
+.env.*
+!.env.example

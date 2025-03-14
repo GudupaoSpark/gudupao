@@ -1,156 +1,455 @@
 <template>
-  <div class="about-page">
-    <PageHeader
-      title="关于古都炮科技"
-      description="古都炮科技是一家充满激情和创新精神的科技公司，我们致力于为企业提供尖端的技术解决方案。通过深入理解客户需求，我们将前沿技术转化为切实可行的商业价值。"
-    />
-
-    <!-- 公司价值观 -->
-    <section class="values py-16">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">我们的核心价值观</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div 
-            v-for="(value, key) in companyValues" 
-            :key="key" 
-            class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow"
-          >
-            <div class="text-5xl text-blue-600 mb-6">
-              <i :class="getValueIcon(key)"></i>
-            </div>
-            <h3 class="text-2xl font-semibold mb-4">{{ value.title }}</h3>
-            <p class="text-gray-600 dark:text-gray-300">
-              {{ value.description }}
-            </p>
-          </div>
+  <div class="about-container">
+    <!-- 视差滚动头部 -->
+    <div class="hero-section">
+      <div class="sticky-container">
+        <div class="hero-content"
+             v-motion
+             :initial="{ scale: 1.2, opacity: 0 }"
+             :enter="{ scale: 1, opacity: 1 }"
+             :visible="checkAndRunAnimation()">
+          <h1 class="hero-title">{{ t('about.title') }}</h1>
+          <p class="hero-description">{{ t('about.description') }}</p>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- 添加团队简介部分 -->
+    <div class="section-wrapper">
+      <div class="team-intro-section">
+        <h2 class="section-title"
+            v-motion
+            :initial="{ opacity: 0, y: 50 }"
+            :visibleOnce="{ 
+              opacity: 1, 
+              y: 0,
+              transition: { duration: 800 } 
+            }">
+          {{ t('about.teamIntroTitle') }}
+        </h2>
+        <p class="team-intro-description"
+           v-motion
+           :initial="{ opacity: 0, y: 30 }"
+           :visibleOnce="{ 
+             opacity: 1, 
+             y: 0,
+             transition: { 
+               delay: 200,
+               duration: 800 
+             } 
+           }">
+          {{ t('about.teamIntroDescription') }}
+        </p>
+      </div>
+    </div>
 
     <!-- 团队介绍 -->
-    <section class="team bg-gray-50 dark:bg-gray-800 py-16">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">我们的团队</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div 
-            v-for="member in teamMembers" 
-            :key="member.name" 
-            class="bg-white rounded-lg overflow-hidden shadow-md dark:bg-gray-700 hover:shadow-xl transition-shadow"
-          >
-            <img 
-              :src="member.image" 
-              :alt="member.name" 
-              class="w-full h-64 object-cover"
-            />
-            <div class="p-6 text-center">
-              <h3 class="text-xl font-semibold mb-2">{{ member.name }}</h3>
-              <p class="text-gray-600 mb-4 dark:text-gray-300">{{ member.role }}</p>
-              <div class="flex justify-center space-x-4">
-                <a 
-                  v-for="social in member.socials" 
-                  :key="social.platform" 
-                  :href="social.link" 
-                  target="_blank" 
-                  class="text-gray-700 hover:text-blue-600"
-                >
-                  <i :class="social.icon"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="section-wrapper">
+      <div class="team-section">
+        <!-- 团队标题 -->
+        <h2 class="section-title"
+            v-motion
+            :initial="{ opacity: 0, y: 50 }"
+            :visibleOnce="{ 
+              opacity: 1, 
+              y: 0,
+              transition: { duration: 800 } 
+            }">
+          {{ t('about.teamTitle') }}
+        </h2>
 
-    <!-- 公司历程 -->
-    <section class="timeline py-16">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">公司发展历程</h2>
-        <div class="relative pl-8">
-          <div 
-            v-for="milestone in companyMilestones" 
-            :key="milestone.year" 
-            class="mb-8 pl-6 relative"
-          >
-            <div class="absolute w-4 h-4 bg-blue-600 rounded-full -left-6 top-2"></div>
-            <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-              <h3 class="text-2xl font-semibold text-blue-600 mb-4">
-                {{ milestone.year }}
-              </h3>
-              <p class="text-gray-700 dark:text-gray-300">{{ milestone.description }}</p>
+        <!-- 团队成员卡片 -->
+        <div class="team-grid">
+          <div v-for="(member, index) in teamMembers" 
+               :key="index"
+               class="team-card"
+               v-motion
+               :initial="{ opacity: 0, y: 50 }"
+               :visibleOnce="{ 
+                 opacity: 1, 
+                 y: 0,
+                 transition: { 
+                   delay: index * 200,
+                   duration: 800 
+                 } 
+               }">
+            <div class="member-image-container">
+              <img :src="member.avatar" :alt="t(`about.team.${index}.name`)" class="member-image">
+            </div>
+            <div class="member-info">
+              <h3>{{ t(`about.team.${index}.name`) }}</h3>
+              <p class="position">{{ t(`about.team.${index}.position`) }}</p>
+              <p class="description">{{ t(`about.team.${index}.description`) }}</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- 公司愿景 -->
+    <div class="vision-wrapper">
+      <div class="vision-section">
+        <h2 class="section-title"
+            v-motion
+            :initial="{ opacity: 0, y: 50 }"
+            :visibleOnce="{ 
+              opacity: 1, 
+              y: 0,
+              transition: { duration: 800 } 
+            }">
+          {{ t('about.visionTitle') }}
+        </h2>
+        <div class="vision-grid">
+          <div v-for="(vision, index) in 3" 
+               :key="index"
+               class="vision-card"
+               v-motion
+               :initial="{ opacity: 0, y: 50 }"
+               :visibleOnce="{ 
+                 opacity: 1, 
+                 y: 0,
+                 transition: { 
+                   delay: index * 200,
+                   duration: 800 
+                 } 
+               }">
+            <div class="vision-content">
+              <div class="vision-icon"></div>
+              <h3>{{ t(`about.vision.${index}.title`) }}</h3>
+              <p>{{ t(`about.vision.${index}.description`) }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-import PageHeader from '~/components/PageHeader.vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { useHead } from 'nuxt/app'
 
-const getValueIcon = (key) => {
-  const icons = {
-    innovation: 'fas fa-lightbulb',
-    integrity: 'fas fa-handshake',
-    collaboration: 'fas fa-users'
+const { t } = useI18n()
+const animationExecuted = ref(false)
+
+// 检查动画状态的函数
+const checkAndRunAnimation = () => {
+  if (!animationExecuted.value) {
+    animationExecuted.value = true
+    // 这里可以触发你的动画
+    return true
   }
-  return icons[key] || 'fas fa-star'
+  return false
 }
 
-const companyValues = {
-  innovation: {
-    title: '技术创新',
-    description: '持续追求技术创新，为客户提供前沿解决方案'
-  },
-  integrity: {
-    title: '诚信为本',
-    description: '诚信是我们的核心价值，以诚信赢得信任'
-  },
-  collaboration: {
-    title: '团队协作',
-    description: '团队协作，共同成长，实现卓越'
+// 监听路由变化
+onMounted(() => {
+  animationExecuted.value = false
+  checkAndRunAnimation()
+})
+
+// Set page title
+useHead({
+  title: 'About | Gudupao'
+})
+
+// 直接初始化数据，不需要等待 onMounted
+const teamMembers = ref([
+  { avatar: '/img/team/member1.jpg', id: 0 },
+  { avatar: '/img/team/member2.jpg', id: 1 },
+  { avatar: '/img/team/member3.jpg', id: 2 }
+])
+
+onMounted(() => {
+  // 在组件挂载后初始化团队成员数据
+  teamMembers.value = [
+    { avatar: '/img/team/member1.jpg', id: 0 },
+    { avatar: '/img/team/member2.jpg', id: 1 },
+    { avatar: '/img/team/member3.jpg', id: 2 }
+  ]
+  
+  // 添加滚动事件监听
+  window.addEventListener('scroll', handleScroll)
+})
+
+// 视差滚动效果
+const handleScroll = () => {
+  const scrolled = window.scrollY
+  const heroContent = document.querySelector('.hero-content')
+  if (heroContent) {
+    heroContent.style.transform = `translate3d(0, ${scrolled * 0.5}px, 0)`
+    heroContent.style.opacity = Math.max(1 - scrolled / 700, 0)
   }
 }
 
-const teamMembers = [
-  {
-    name: '张明',
-    role: '创始人 & CEO',
-    image: '/assets/img/team/team-1.jpg',
-    socials: [
-      { platform: 'linkedin', icon: 'fab fa-linkedin', link: '#' },
-      { platform: 'twitter', icon: 'fab fa-twitter', link: '#' }
-    ]
-  },
-  {
-    name: '李华',
-    role: '技术总监',
-    image: '/assets/img/team/team-2.jpg',
-    socials: [
-      { platform: 'github', icon: 'fab fa-github', link: '#' },
-      { platform: 'twitter', icon: 'fab fa-twitter', link: '#' }
-    ]
-  },
-  {
-    name: '王芳',
-    role: '产品经理',
-    image: '/assets/img/team/team-3.jpg',
-    socials: [
-      { platform: 'linkedin', icon: 'fab fa-linkedin', link: '#' },
-      { platform: 'dribbble', icon: 'fab fa-dribbble', link: '#' }
-    ]
-  }
-]
-
-const companyMilestones = [
-  { year: '2020', description: '公司成立，专注于软件开发和技术创新' },
-  { year: '2021', description: '获得首轮融资，扩大研发团队' },
-  { year: '2022', description: '推出首个AI驱动的企业解决方案' },
-  { year: '2023', description: '成为多个科技创新项目的领先者' },
-  { year: '2024', description: '获得行业最佳技术创新奖' }
-]
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
 <style scoped>
+.about-container {
+  background: linear-gradient(to bottom, 
+    #ffffff,
+    #f0f9ff,
+    #e0f2fe,
+    #f0f9ff,
+    #ffffff
+  );
+  color: #0c4a6e;
+}
+
+.hero-section {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at center,
+    rgba(59, 130, 246, 0.1) 0%,
+    rgba(219, 39, 119, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.sticky-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  text-align: center;
+  padding: 0 20px;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-title {
+  font-size: 8vw;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  background: linear-gradient(
+    300deg,
+    #0ea5e9 0%,    /* 天蓝色 */
+    #db2777 20%,   /* 粉色 */
+    #60a5fa 40%,   /* 浅蓝色 */
+    #ec4899 60%,   /* 浅粉色 */
+    #0ea5e9 80%,   /* 天蓝色 */
+    #db2777 100%   /* 粉色 */
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 8s linear infinite;
+  text-align: center;
+  width: 100%;
+}
+
+.hero-description {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  background: linear-gradient(
+    120deg,
+    #0ea5e9 0%,    /* 天蓝色 */
+    #ec4899 50%,   /* 粉色 */
+    #0ea5e9 100%   /* 天蓝色 */
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 6s linear infinite;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-wrapper {
+  background: #f8fafc;  /* 改为浅色背景 */
+  position: relative;
+  z-index: 1;
+}
+
+.team-section, .vision-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 120px 20px;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 80px;
+  background: linear-gradient(to right, #0f172a, #475569);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-section, .vision-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.team-card {
+  background: rgba(255, 255, 255, 0.8);  /* 改为白色背景 */
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);  /* 添加阴影 */
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.member-image-container {
+  position: relative;
+  padding-top: 100%;
+  overflow: hidden;
+}
+
+.member-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.team-card:hover .member-image {
+  transform: scale(1.1);
+}
+
+.member-info {
+  padding: 30px;
+  text-align: center;
+}
+
+.member-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.position {
+  color: #475569;  /* 改为深灰色 */
+  margin-bottom: 15px;
+}
+
+.description {
+  color: #64748b;  /* 改为中灰色 */
+  line-height: 1.6;
+}
+
+.vision-wrapper {
+  background: #f1f5f9;  /* 改为浅灰色背景 */
+  position: relative;
+}
+
+.vision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.vision-card {
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.8);  /* 改为白色背景 */
+  border-radius: 20px;
+  transition: all 0.5s ease;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.vision-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.vision-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 30px;
+  background: linear-gradient(45deg, #60a5fa, #ec4899);  /* 改为渐变色 */
+  border-radius: 50%;
+  position: relative;
+}
+
+.vision-icon::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: #fff;  /* 改为白色背景 */
+}
+
+.vision-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #0f172a;  /* 添加深色文字 */
+}
+
+.vision-content p {
+  color: #475569;  /* 改为深灰色 */
+  line-height: 1.6;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-description {
+    font-size: 1.2rem;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Add these styles inside the style tag */
+.team-intro-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.team-intro-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #475569;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .team-intro-description {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+}
 </style>

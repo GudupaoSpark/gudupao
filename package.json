@@ -17,7 +17,6 @@
     "@tsparticles/vue3": "^3.0.1",
     "@vueuse/motion": "^3.0.3",
     "nuxt": "^3.15.4",
-    "particles.js": "^2.0.0",
     "twemoji": "^14.0.2",
     "vue": "latest",
     "vue-i18n": "11.0.0-rc.1",

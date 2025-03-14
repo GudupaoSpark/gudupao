@@ -24,7 +24,7 @@ jobs:
         run: pnpm install
 
       - name: Build the application
-        run: pnpm run build
+        run: pnpm run generate
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v4

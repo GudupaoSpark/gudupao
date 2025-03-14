@@ -1,0 +1,120 @@
+{
+  "home": {
+    "timelineTitle": "发展历程",
+    "timeline": [
+      {
+        "title": "创立之初",
+        "description": "2023年1月31日下午4点25分古都炮工作室（Gudupao Spark Inc.的前身）在广州花都成立，由一群喜爱玩Minecraft的初中生成立"
+      },
+      {
+        "title": "迷茫｜寻光",
+        "description": "经过一年的发展团队进入了迷茫阶段不知道该做点什么"
+      },
+      {
+        "title": "光亮",
+        "description": "终于我们找到了那束属于我们自己的光"
+      }
+    ],
+    "heroTitle": "Hey，我们是古都炮\n用技术创造有趣的事",
+    "heroSubtitle": "让技术更简单，让创新更有趣",
+    "techStackTitle": "核心技术栈",
+    "techStack": [
+      {
+        "title": "Vue.js",
+        "description": "渐进式 JavaScript 框架"
+      },
+      {
+        "title": "React",
+        "description": "用于构建用户界面的 JavaScript 库"
+      },
+      {
+        "title": "Node.js",
+        "description": "基于 Chrome V8 引擎的 JavaScript 运行时"
+      },
+      {
+        "title": "TypeScript",
+        "description": "带类型系统的 JavaScript 开发语言"
+      },
+      {
+        "title": "Webpack",
+        "description": "现代 JavaScript 应用的静态模块打包工具"
+      },
+      {
+        "title": "Docker",
+        "description": "应用容器化平台"
+      }
+    ],
+    "stats": [
+      { "label": "年技术沉淀" },
+      { "label": "信任的伙伴" },
+      { "label": "成功项目" },
+      { "label": "技术专利" }
+    ]
+  },
+  "about": {
+    "title": "关于古都炮",
+    "description": "我们是一群充满激情的年轻人，致力于用技术改变世界，让创新更有趣。",
+    "teamTitle": "主要团队",
+    "teamIntroTitle": "团队简介",
+    "teamIntroDescription": "古都炮星火成立于2023年1月31日下午4点25分的中国广东省广州市花都区，是一群喜爱着Minecraft的孩子们一起组建的科技工作室用于维护他们的Minecraft服务器。到现在为止当初的古都炮工作室已经成长为现在的Gudupao Spark Inc.，我们还在不断成长哦～加油加油！！！",
+    "team": [
+      {
+        "name": "Debug967",
+        "position": "董事长&首席执行官（CEO）",
+        "description": "拥有多年全栈开发经验，热衷于探索新技术，推动团队创新。"
+      },
+      {
+        "name": "冬瓜Cherry",
+        "position": "董事长秘书&技术总监（CTO）",
+        "description": "喜欢可可爱爱的东西，尊嘟超喜欢，对技术充满热情，致力于推动团队的技术发展。"
+      },
+      {
+        "name": "柚子柚子",
+        "position": "软件部部门主管",
+        "description": "专业的后端工程师，擅长自研算法，书呆子一个"
+      }
+    ],
+    "visionTitle": "我们的愿景",
+    "vision": [
+      {
+        "title": "技术创新",
+        "description": "持续探索前沿技术，为用户带来更好的产品体验。"
+      },
+      {
+        "title": "用户至上",
+        "description": "始终以用户需求为中心，打造极致的产品体验。"
+      },
+      {
+        "title": "开放共享",
+        "description": "拥抱开源社区，促进技术交流与创新。"
+      }
+    ]
+  },
+  "footer": {
+    "quickLinks": "快速链接",
+    "contactUs": "联系我们",
+    "address": "广州市花都区",
+    "rights": "保留所有权利",
+    "Friendly-links": "友情链接"
+  },
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "services": "项目",
+    "contact": "联系我们"
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "有任何问题或建议？请随时与我们联系",
+    "getInTouch": "联系方式",
+    "form": {
+      "name": "姓名",
+      "namePlaceholder": "请输入您的姓名",
+      "email": "电子邮箱",
+      "emailPlaceholder": "请输入您的电子邮箱",
+      "message": "留言内容",
+      "messagePlaceholder": "请输入您的留言内容",
+      "submit": "发送消息"
+    }
+  }
+}

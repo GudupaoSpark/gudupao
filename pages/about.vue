@@ -2,9 +2,50 @@
     <div class="about-container">
         <!-- 视差滚动头部 -->
         <div class="hero-section">
+            <!-- 添加粒子容器，添加 client-only 包裹 -->
+            <ClientOnly>
+                <Particles
+                    id="tsparticles"
+                    :options="{
+                        background: {
+                            color: {
+                                value: 'transparent'
+                            }
+                        },
+                        fpsLimit: 60,
+                        particles: {
+                            color: {
+                                value: ['#0ea5e9', '#ec4899']
+                            },
+                            links: {
+                                color: '#0ea5e9',
+                                distance: 150,
+                                enable: true,
+                                opacity: 0.2,
+                                width: 1
+                            },
+                            move: {
+                                enable: true,
+                                speed: 1
+                            },
+                            number: {
+                                value: 50
+                            },
+                            opacity: {
+                                value: 0.3
+                            },
+                            size: {
+                                value: 3
+                            }
+                        }
+                    }"
+                />
+            </ClientOnly>
             <div class="sticky-container">
-                <div class="hero-content" v-motion :initial="{ scale: 1.2, opacity: 0 }"
-                    :enter="{ scale: 1, opacity: 1 }" :visible="checkAndRunAnimation()">
+                <div class="hero-content" v-motion 
+                    :initial="{ scale: 1.2, opacity: 0, y: 50 }"
+                    :enter="{ scale: 1, opacity: 1, y: -50 }"
+                    :visible="checkAndRunAnimation()">
                     <h1 class="hero-title">{{ $t('about.title') }}</h1>
                     <p class="hero-description">{{ $t('about.description') }}</p>
                 </div>
@@ -104,7 +145,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import { useHead } from '@unhead/vue'
+import { useHead } from '#imports'  // 修改这行
 
 const animationExecuted = ref(false)
 
@@ -153,7 +194,9 @@ const handleScroll = () => {
     const scrolled = window.scrollY
     const heroContent = document.querySelector('.hero-content')
     if (heroContent) {
-        heroContent.style.transform = `translate3d(0, ${scrolled * 0.5}px, 0)`
+        // 修改初始位置，考虑到 v-motion 的 y 偏移
+        const baseOffset = -50  // 与 v-motion 的 y 值相对应
+        heroContent.style.transform = `translate3d(0, ${baseOffset + scrolled * 0.5}px, 0)`
         heroContent.style.opacity = Math.max(1 - scrolled / 700, 0)
     }
 }
@@ -205,24 +248,32 @@ onUnmounted(() => {
     margin-bottom: 2rem;
     background: linear-gradient(300deg,
             #0ea5e9 0%,
-            /* 天蓝色 */
             #db2777 20%,
-            /* 粉色 */
             #60a5fa 40%,
-            /* 浅蓝色 */
             #ec4899 60%,
-            /* 浅粉色 */
             #0ea5e9 80%,
-            /* 天蓝色 */
-            #db2777 100%
-            /* 粉色 */
-        );
+            #db2777 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shine 8s linear infinite;
     text-align: center;
     width: 100%;
+    display: inline-block;
+    transform: translateX(2vw);  /* 修改这行，向右移动 */
+    white-space: nowrap;
+}
+
+.hero-content {
+    text-align: center;
+    color: var(--text-color);
+    padding: 0 20px;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;  /* 添加这行 */
 }
 
 .hero-description {
@@ -453,3 +504,24 @@ onUnmounted(() => {
     }
 }
 </style>
+
+/* 添加粒子容器样式 */
+#tsparticles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.hero-section {
+    position: relative;
+    /* 其他样式保持不变 */
+}
+
+.sticky-container {
+    position: relative;
+    z-index: 1;
+    /* 其他样式保持不变 */
+}

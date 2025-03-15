@@ -1,4 +1,53 @@
 {
+  "home": {
+    "title": "Gudupao | Light Up The Future",
+    "brandName": "GudupaoSpark",
+    "brandNameCn": "Light Up The Future",
+    "techStack": {
+      "title": "Our Tech Stack",
+      "vue": {
+        "name": "Vue.js",
+        "desc": "Progressive JavaScript Framework"
+      },
+      "nuxt": {
+        "name": "Nuxt.js",
+        "desc": "The Full-stack Framework for Vue.js"
+      },
+      "python": {
+        "name": "Python",
+        "desc": "Interpreted Scripting Language"
+      },
+      "fastapi": {
+        "name": "FastAPI",
+        "desc": "High-performance Python Web Framework"
+      }
+    },
+    "timeline": {
+      "title": "Development Timeline",
+      "items": [
+        {
+          "date": "Dec 2023",
+          "title": "Gudupao Spark Founded",
+          "desc": "Committed to creating high-quality tech learning platform"
+        },
+        {
+          "date": "Jan 2024",
+          "title": "First Course Launch",
+          "desc": "Released Advanced Vue.js Development Course"
+        },
+        {
+          "date": "Mar 2024",
+          "title": "Community Launch",
+          "desc": "Tech community officially opened"
+        },
+        {
+          "date": "Jun 2024",
+          "title": "Course System Complete",
+          "desc": "Full-stack development curriculum system completed"
+        }
+      ]
+    }
+  },
   "welcome": "Welcome to Nuxt I18n",
   "description": "This is a multilingual site built with Nuxt and i18n module.",
   "nav": {

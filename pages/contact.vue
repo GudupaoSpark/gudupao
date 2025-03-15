@@ -245,7 +245,7 @@
   }
   
   .submit-button:hover {
-    background: var(--button-hover-bg);
+    background: #004aaa;
     transform: translateY(-1px);
   }
   

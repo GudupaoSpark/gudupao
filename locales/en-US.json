@@ -1,9 +1,16 @@
 {
+  "welcome": "Welcome to Nuxt I18n",
+  "description": "This is a multilingual site built with Nuxt and i18n module.",
   "nav": {
     "home": "Home",
     "about": "About Us",
     "services": "Services",
-    "contact": "Contact"
+    "contact": "Contact Us"
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode",
+    "toggle": "Toggle Theme"
   },
   "footer": {
     "quickLinks": "Quick Links",
@@ -11,110 +18,5 @@
     "address": "Hong Kong, China",
     "Friendly-links": "Links",
     "rights": "All rights reserved"
-  },
-  "about": {
-    "title": "About Gudupao",
-    "description": "We are a group of passionate young people dedicated to changing the world through technology and making innovation more fun.",
-    "teamTitle": "Core Team",
-    "teamIntroTitle": "Team Introduction",
-    "teamIntroDescription": "Gudupao Spark was established on January 31, 2023, at 4:25 PM in Huadu District, Guangzhou, Guangdong Province, China. It started as a tech studio created by a group of children who loved Minecraft to maintain their Minecraft server. The original Gudupao Studio has now grown into Gudupao Spark Inc., and we're still growing! Keep going!!!",
-    "team": [
-      {
-        "name": "Debug967",
-        "position": "Chairman & CEO",
-        "description": "Years of full-stack development experience, passionate about exploring new technologies and driving team innovation."
-      },
-      {
-        "name": "Cherry",
-        "position": "Chairman Secretary & CTO",
-        "description": "Loves cute things, especially Zun Dou, passionate about technology and committed to driving team's technical development."
-      },
-      {
-        "name": "Yuzi",
-        "position": "Software Department Manager",
-        "description": "Professional backend engineer, skilled in algorithm research, a true tech geek"
-      }
-    ],
-    "visionTitle": "Our Vision",
-    "vision": [
-      {
-        "title": "Technical Innovation",
-        "description": "Continuously exploring cutting-edge technologies to bring better product experiences to users."
-      },
-      {
-        "title": "User First",
-        "description": "Always focusing on user needs to create ultimate product experiences."
-      },
-      {
-        "title": "Open Sharing",
-        "description": "Embracing the open-source community, promoting technical exchange and innovation."
-      }
-    ]
-  },
-  "home": {
-    "timelineTitle": "Development Timeline",
-    "timeline": [
-      {
-        "title": "Foundation",
-        "description": "On January 31, 2023, at 4:25 PM, Gudupao Studio (predecessor of Gudupao Spark Inc.) was established in Huadu, Guangzhou, by a group of middle school students who love Minecraft"
-      },
-      {
-        "title": "Lost | Seeking Light",
-        "description": "After a year of development, the team entered a period of confusion, not knowing what to do next"
-      },
-      {
-        "title": "Light",
-        "description": "Finally, we found our own light"
-      }
-    ],
-    "heroTitle": "Hey, We're Gudupao\nCreating Fun with Technology",
-    "heroSubtitle": "Making Technology Simple, Innovation Fun",
-    "techStackTitle": "Core Tech Stack",
-    "techStack": [
-      {
-        "title": "Vue.js",
-        "description": "Progressive JavaScript Framework"
-      },
-      {
-        "title": "React",
-        "description": "JavaScript Library for Building User Interfaces"
-      },
-      {
-        "title": "Node.js",
-        "description": "JavaScript Runtime Built on Chrome's V8 Engine"
-      },
-      {
-        "title": "TypeScript",
-        "description": "JavaScript with Type System"
-      },
-      {
-        "title": "Webpack",
-        "description": "Static Module Bundler for Modern JavaScript Applications"
-      },
-      {
-        "title": "Docker",
-        "description": "Application Containerization Platform"
-      }
-    ],
-    "stats": [
-      { "label": "Years of Experience" },
-      { "label": "Trusted Partners" },
-      { "label": "Projects" },
-      { "label": "Tech Patents" }
-    ]
-  },
-  "contact": {
-    "title": "Contact Us",
-    "subtitle": "Have any questions or suggestions? Feel free to contact us",
-    "getInTouch": "Get in Touch",
-    "form": {
-      "name": "Name",
-      "namePlaceholder": "Enter your name",
-      "email": "Email",
-      "emailPlaceholder": "Enter your email address",
-      "message": "Message",
-      "messagePlaceholder": "Enter your message",
-      "submit": "Send Message"
-    }
   }
 }

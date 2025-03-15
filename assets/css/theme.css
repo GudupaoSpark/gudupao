@@ -1,0 +1,38 @@
+:root {
+  /* 浅色模式变量 */
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --border-color: #dddddd;
+  --header-bg: #ffffff;
+  --header-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --link-color: #333333;
+  --link-hover-color: #0066cc;
+  --dropdown-bg: #ffffff;
+  --dropdown-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --hover-bg: #ddd;
+}
+
+.dark-theme {
+  /* 深色模式变量 */
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --border-color: #444444;
+  --header-bg: #1e1e1e;
+  --header-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  --link-color: #e0e0e0;
+  --link-hover-color: #66b3ff;
+  --dropdown-bg: #2d2d2d;
+  --dropdown-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  --hover-bg: #222;
+}
+
+html, body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+  min-height: 100%;
+}
+
+html {
+  height: 100%;
+}

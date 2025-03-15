@@ -1,22 +1,23 @@
 <template>
-  <div class="app">
-    <NavBar />
-    <NuxtPage />
+  <div>
+    <Header />
+    <main class="main-content">
+      <NuxtPage />
+    </main>
     <Footer />
   </div>
 </template>
 
-<script setup lang="ts">
-import NavBar from './components/NavBar.vue'
+<script setup>
+// 导入全局CSS
+import './assets/css/theme.css'
 import Footer from './components/Footer.vue'
 </script>
 
 <style>
-.app {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: #ffffff;
-  color: #1a202c;
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 </style>

@@ -74,6 +74,7 @@ onMounted(() => {
   align-items: center;
   height: 70px;
   position: relative;
+  overflow-x: hidden;  /* 添加这行防止水平溢出 */
 }
 
 .main-nav {
@@ -182,11 +183,16 @@ onMounted(() => {
     flex-wrap: wrap;
     height: auto;
     justify-content: space-between;
+    position: relative;  /* 确保相对定位 */
+    width: 100%;        /* 确保宽度100% */
+    box-sizing: border-box;  /* 添加这行确保padding不会导致溢出 */
   }
   
   .hamburger-menu {
     display: flex;
     order: 3;
+    position: relative;  /* 修改定位 */
+    right: 0;           /* 确保右对齐 */
   }
   
   .main-nav {

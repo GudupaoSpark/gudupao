@@ -1,0 +1,1 @@
+import{u as a,l as s,m as r,n as o,p as u}from"./DM3wurIQ.js";function i(n){var t;const e=n||s();return((t=e==null?void 0:e.ssrContext)==null?void 0:t.head)||(e==null?void 0:e.runWithContext(()=>{if(r())return o(u)}))}function d(n,e={}){const t=i(e.nuxt);if(t)return a(n,{head:t,...e})}export{d as u};

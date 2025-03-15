@@ -174,11 +174,39 @@ onUnmounted(() => {
     position: relative;
     overflow: hidden;
     background: radial-gradient(circle at center,
-            rgba(59, 130, 246, 0.1) 0%,
-            rgba(219, 39, 119, 0.1) 50%,
-            rgba(255, 255, 255, 0) 100%);
+        rgba(59, 130, 246, 0.25) 0%,
+        rgba(219, 39, 119, 0.25) 25%,
+        rgba(96, 165, 250, 0.25) 50%,
+        rgba(236, 72, 153, 0.25) 75%,
+        rgba(59, 130, 246, 0.25) 100%);
+    background-position: center;
+    background-size: 100% 100%;
+    animation: breatheAnimation 6s ease-in-out infinite;
 }
 
+@keyframes breatheAnimation {
+    0% {
+        background-size: 100% 100%;
+    }
+    50% {
+        background-size: 150% 150%;
+    }
+    100% {
+        background-size: 100% 100%;
+    }
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0% center;
+    }
+    50% {
+        background-position: 150% center;
+    }
+    100% {
+        background-position: 0% center;
+    }
+}
 .sticky-container {
     position: sticky;
     top: 0;
@@ -205,22 +233,16 @@ onUnmounted(() => {
     margin-bottom: 2rem;
     background: linear-gradient(300deg,
             #0ea5e9 0%,
-            /* 天蓝色 */
             #db2777 20%,
-            /* 粉色 */
             #60a5fa 40%,
-            /* 浅蓝色 */
             #ec4899 60%,
-            /* 浅粉色 */
             #0ea5e9 80%,
-            /* 天蓝色 */
-            #db2777 100%
-            /* 粉色 */
+            #0ea5e9 100%
         );
-    background-size: 200% auto;
+    background-size: 300% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shine 8s linear infinite;
+    animation: shine 6s ease-in-out infinite;
     text-align: center;
     width: 100%;
 }
@@ -230,16 +252,13 @@ onUnmounted(() => {
     line-height: 1.6;
     background: linear-gradient(120deg,
             #0ea5e9 0%,
-            /* 天蓝色 */
             #ec4899 50%,
-            /* 粉色 */
             #0ea5e9 100%
-            /* 天蓝色 */
         );
-    background-size: 200% auto;
+    background-size: 300% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shine 6s linear infinite;
+    animation: shine 6s ease-in-out infinite;
     max-width: 800px;
     margin: 0 auto;
 }

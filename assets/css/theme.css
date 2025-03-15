@@ -7,7 +7,7 @@
   --header-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   --link-color: #333333;
   --link-hover-color: #0066cc;
-  --dropdown-bg: #ffffff;
+  --dropdown-bg: #ddd;
   --dropdown-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   --hover-bg: #ddd;
 }

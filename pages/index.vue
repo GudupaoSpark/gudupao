@@ -71,6 +71,9 @@
 </template>
 
 <script setup>
+useHead({
+    title: 'Gudupao | Light Up The Future'
+})
 // 移除了原有的语言切换逻辑，因为已经封装到LanguageSwitcher组件中
 </script>
 

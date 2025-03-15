@@ -9,9 +9,14 @@
 </template>
 
 <script setup>
-// 导入全局CSS
-import './assets/css/theme.css'
-import Footer from './components/Footer.vue'
+useHead({
+  link: [
+    {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap'
+    }
+  ]
+})
 </script>
 
 <style>

@@ -74,13 +74,21 @@ onMounted(() => {
   align-items: center;
   height: 70px;
   position: relative;
-  overflow-x: hidden;  /* 添加这行防止水平溢出 */
 }
 
 .main-nav {
-  position: absolute;  /* 添加这行 */
-  left: 50%;          /* 添加这行 */
-  transform: translateX(-50%);  /* 添加这行 */
+  /* 移除绝对定位，改用 flex 布局 */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative; /* 添加相对定位 */
+  z-index: 101; /* 确保下拉菜单显示在其他元素之上 */
 }
 
 .main-nav ul {
@@ -124,12 +132,6 @@ onMounted(() => {
 
 .main-nav a:hover {
   color: var(--link-hover-color);
-}
-
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
 
 .desktop-only {

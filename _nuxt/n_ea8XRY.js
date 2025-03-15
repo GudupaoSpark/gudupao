@@ -1,1 +1,0 @@
-import{u as s,m as a,n as r,q as o,s as u}from"./C0KqseV2.js";function i(n){var t;const e=n||a();return((t=e==null?void 0:e.ssrContext)==null?void 0:t.head)||(e==null?void 0:e.runWithContext(()=>{if(r())return o(u)}))}function d(n,e={}){const t=i(e.nuxt);if(t)return s(n,{head:t,...e})}export{d as u};

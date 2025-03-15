@@ -1,11 +1,60 @@
 {
+  "home": {
+    "title": "Gudupao | 點亮未來",
+    "brandName": "GudupaoSpark",
+    "brandNameCn": "古都炮星火",
+    "techStack": {
+      "title": "我們的技術棧",
+      "vue": {
+        "name": "Vue.js",
+        "desc": "漸進式 JavaScript 框架"
+      },
+      "nuxt": {
+        "name": "Nuxt.js",
+        "desc": "Vue.js 的全棧框架"
+      },
+      "python": {
+        "name": "Python",
+        "desc": "解釋型腳本語言"
+      },
+      "fastapi": {
+        "name": "FastAPI",
+        "desc": "基於 Python 的高性能 Web 框架"
+      }
+    },
+    "timeline": {
+      "title": "發展歷程",
+      "items": [
+        {
+          "date": "2023年12月",
+          "title": "古都炮星火正式成立",
+          "desc": "致力於打造高質量的技術學習平台"
+        },
+        {
+          "date": "2024年1月",
+          "title": "首個技術課程上線",
+          "desc": "發布第一期Vue.js高級開發課程"
+        },
+        {
+          "date": "2024年3月",
+          "title": "社區建設啟動",
+          "desc": "技術交流社區正式開放"
+        },
+        {
+          "date": "2024年6月",
+          "title": "課程體系完善",
+          "desc": "全棧開發課程體系構建完成"
+        }
+      ]
+    }
+  },
   "welcome": "歡迎使用Nuxt I18n",
   "description": "這是一個使用Nuxt和i18n模塊構建的多語言網站。",
   "nav": {
     "home": "首頁",
     "about": "關於我們",
     "services": "服務",
-    "contact": "聯繫我們"
+    "contact": "聯絡我們"
   },
   "theme": {
     "light": "淺色模式",
@@ -22,9 +71,9 @@
   "about": {
     "title": "關於古都炮",
     "description": "我們是一群充滿激情的年輕人，致力於用技術改變世界，讓創新更有趣。",
+    "teamTitle": "主要團隊",
     "teamIntroTitle": "團隊簡介",
     "teamIntroDescription": "古都炮星火成立於2023年1月31日下午4點25分的中國廣東省廣州市花都區，是一群喜愛著Minecraft的孩子們一起組建的科技工作室用於維護他們的Minecraft伺服器。到現在為止當初的古都炮工作室已經成長為現在的Gudupao Spark Inc.，我們還在不斷成長哦～加油加油！！！",
-    "teamTitle": "主要團隊",
     "team": [
       {
         "name": "Debug967",

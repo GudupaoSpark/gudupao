@@ -65,18 +65,36 @@ onMounted(() => {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 70px;
+  position: relative;
+}
+
+.main-nav {
+  position: absolute;  /* 添加这行 */
+  left: 50%;          /* 添加这行 */
+  transform: translateX(-50%);  /* 添加这行 */
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;  /* 添加这行 */
 }
 
 .logo {
   font-size: 24px;
   font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 
 .logo a {
@@ -160,9 +178,10 @@ onMounted(() => {
 /* 响应式设计 */
 @media (max-width: 768px) {
   .container {
+    padding: 15px 20px;
     flex-wrap: wrap;
     height: auto;
-    padding: 15px 20px;
+    justify-content: space-between;
   }
   
   .hamburger-menu {

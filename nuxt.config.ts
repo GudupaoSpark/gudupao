@@ -2,8 +2,12 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-03-15',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/i18n'],
+  modules: [
+    '@vueuse/motion/nuxt',
+    '@nuxtjs/i18n'
+  ],
   css: ['~/assets/css/theme.css','@fortawesome/fontawesome-svg-core/styles.css'],
+  // @ts-ignore - i18n module types
   i18n: {
     strategy: 'no_prefix',
     defaultLocale: 'en-us',

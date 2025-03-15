@@ -1,68 +1,56 @@
 <template>
     <div class="home-container">
-        <div class="logo-text-container">
-            <div class="logo-container">
-                <img src="/logo.png" alt="Gudupao Logo" class="square-logo" />
+        <div class="logo-text-container" 
+            v-motion
+            :initial="{ opacity: 0, y: 100 }"
+            :enter="{ opacity: 1, y: 0, transition: { duration: 1000 } }">
+            <div class="logo-container" 
+                v-motion
+                :initial="{ opacity: 0, scale: 0.5 }"
+                :enter="{ opacity: 1, scale: 1, transition: { duration: 800, delay: 200 } }">
+                <img src="/logo.png" alt="Gudupao Logo" class="square-logo hover-rotate" />
             </div>
-            <div class="text-container">
-                <h1 class="brand-name">GudupaoSpark</h1>
-                <h2 class="brand-name-cn">古都炮星火</h2>
+            <div class="text-container"
+                v-motion
+                :initial="{ opacity: 0, x: 50 }"
+                :enter="{ opacity: 1, x: 0, transition: { duration: 800, delay: 400 } }">
+                <h1 class="brand-name">{{ $t('home.brandName') }}</h1>
+                <h2 class="brand-name-cn">{{ $t('home.brandNameCn') }}</h2>
             </div>
         </div>
-        <div class="tech-stack-container">
-            <h2 class="section-title">我们的技术栈</h2>
+
+        <div class="tech-stack-container"
+            v-motion
+            :initial="{ opacity: 0, y: 50 }"
+            :visible="{ opacity: 1, y: 0, transition: { duration: 800 } }">
+            <h2 class="section-title glow-text">{{ $t('home.techStack.title') }}</h2>
             <div class="tech-stack-grid">
-                <div class="tech-card">
-                    <img src="/icon/vue.png" class="tech-icon">
-                    <h3 class="tech-name">Vue.js</h3>
-                    <p class="tech-desc">渐进式 JavaScript 框架</p>
-                </div>
-                <div class="tech-card">
-                    <img src="/icon/nuxt.png" class="tech-icon">
-                    <h3 class="tech-name">Nuxt.js</h3>
-                    <p class="tech-desc">Vue.js 的全栈框架</p>
-                </div>
-                <div class="tech-card">
-                    <img src="/icon/python.ico" class="tech-icon">
-                    <h3 class="tech-name">Python</h3>
-                    <p class="tech-desc">解释型脚本语言</p>
-                </div>
-                <div class="tech-card">
-                    <img src="/icon/fastapi.png" class="tech-icon">
-                    <h3 class="tech-name">FastAPI</h3>
-                    <p class="tech-desc">基于 Python 的高性能 Web 框架</p>
+                <div v-for="(tech, index) in techStack" 
+                    :key="index"
+                    class="tech-card floating"
+                    v-motion
+                    :initial="{ opacity: 0, y: 50 }"
+                    :visible="{ opacity: 1, y: 0, transition: { duration: 600, delay: index * 200 } }">
+                    <img :src="tech.icon" :alt="tech.name" class="tech-icon">
+                    <h3 class="tech-name">{{ $t(`home.techStack.${tech.key}.name`) }}</h3>
+                    <p class="tech-desc">{{ $t(`home.techStack.${tech.key}.desc`) }}</p>
                 </div>
             </div>
         </div>
-        <div class="timeline-container">
-            <h2 class="section-title">发展历程</h2>
+
+        <div class="timeline-container"
+            v-motion
+            :initial="{ opacity: 0, y: 50 }"
+            :visible="{ opacity: 1, y: 0, transition: { duration: 800 } }">
+            <h2 class="section-title glow-text">{{ $t('home.timeline.title') }}</h2>
             <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2023年12月</div>
+                <div v-for="(item, index) in timelineItems" 
+                    :key="index"
+                    class="timeline-item">
+                    <div class="timeline-date">{{ $t(`home.timeline.items.${index}.date`) }}</div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">古都炮星火正式成立</h3>
-                        <p class="timeline-desc">致力于打造高质量的技术学习平台</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2024年1月</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">首个技术课程上线</h3>
-                        <p class="timeline-desc">发布第一期Vue.js高级开发课程</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2024年3月</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">社区建设启动</h3>
-                        <p class="timeline-desc">技术交流社区正式开放</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2024年6月</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">课程体系完善</h3>
-                        <p class="timeline-desc">全栈开发课程体系构建完成</p>
+                        <h3 class="timeline-title">{{ $t(`home.timeline.items.${index}.title`) }}</h3>
+                        <p class="timeline-desc">{{ $t(`home.timeline.items.${index}.desc`) }}</p>
                     </div>
                 </div>
             </div>
@@ -71,10 +59,28 @@
 </template>
 
 <script setup>
+const techStack = [
+    {
+        key: 'vue',
+        icon: '/icon/vue.png'
+    },
+    {
+        key: 'nuxt',
+        icon: '/icon/nuxt.png'
+    },
+    {
+        key: 'python',
+        icon: '/icon/python.ico'
+    },
+    {
+        key: 'fastapi',
+        icon: '/icon/fastapi.png'
+    }
+]
+
 useHead({
     title: 'Gudupao | Light Up The Future'
 })
-// 移除了原有的语言切换逻辑，因为已经封装到LanguageSwitcher组件中
 </script>
 
 <style scoped>
@@ -460,5 +466,70 @@ useHead({
     .brand-name-cn {
         font-size: 1.8rem;
     }
+}
+
+/* 添加新的动画样式 */
+.hover-rotate {
+    transition: transform 0.5s ease;
+}
+
+.hover-rotate:hover {
+    transform: rotate(5deg) scale(1.05);
+}
+
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.glow-text {
+    text-shadow: 0 0 10px rgba(0, 180, 219, 0.5);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(0, 180, 219, 0.5);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(0, 180, 219, 0.8),
+                     0 0 30px rgba(0, 180, 219, 0.6);
+    }
+}
+
+.tech-card {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.timeline-item {
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: scale(1.05);
+}
+
+/* 添加滚动显示动画 */
+.fade-up-enter-active {
+    transition: all 0.8s ease;
+}
+
+.fade-up-enter-from {
+    opacity: 0;
+    transform: translateY(30px);
 }
 </style>

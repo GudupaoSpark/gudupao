@@ -1,4 +1,53 @@
 {
+  "home": {
+    "title": "Gudupao | 点亮未来",
+    "brandName": "GudupaoSpark",
+    "brandNameCn": "古都炮星火",
+    "techStack": {
+      "title": "我们的技术栈",
+      "vue": {
+        "name": "Vue.js",
+        "desc": "渐进式 JavaScript 框架"
+      },
+      "nuxt": {
+        "name": "Nuxt.js",
+        "desc": "Vue.js 的全栈框架"
+      },
+      "python": {
+        "name": "Python",
+        "desc": "解释型脚本语言"
+      },
+      "fastapi": {
+        "name": "FastAPI",
+        "desc": "基于 Python 的高性能 Web 框架"
+      }
+    },
+    "timeline": {
+      "title": "发展历程",
+      "items": [
+        {
+          "date": "2023年12月",
+          "title": "古都炮星火正式成立",
+          "desc": "致力于打造高质量的技术学习平台"
+        },
+        {
+          "date": "2024年1月",
+          "title": "首个技术课程上线",
+          "desc": "发布第一期Vue.js高级开发课程"
+        },
+        {
+          "date": "2024年3月",
+          "title": "社区建设启动",
+          "desc": "技术交流社区正式开放"
+        },
+        {
+          "date": "2024年6月",
+          "title": "课程体系完善",
+          "desc": "全栈开发课程体系构建完成"
+        }
+      ]
+    }
+  },
   "welcome": "欢迎使用Nuxt I18n",
   "description": "这是一个使用Nuxt和i18n模块构建的多语言网站。",
   "nav": {

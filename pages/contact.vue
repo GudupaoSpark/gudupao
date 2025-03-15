@@ -84,8 +84,7 @@
   </template>
   
   <script setup>
-  import { ref } from 'vue'
-  import { useHead } from '@unhead/vue'
+  import { useHead } from '#imports'  // 修改这行
   
   
   // 设置页面标题

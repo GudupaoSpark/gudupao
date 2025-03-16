@@ -185,16 +185,16 @@ onMounted(() => {
     flex-wrap: wrap;
     height: auto;
     justify-content: space-between;
-    position: relative;  /* 确保相对定位 */
-    width: 100%;        /* 确保宽度100% */
-    box-sizing: border-box;  /* 添加这行确保padding不会导致溢出 */
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .hamburger-menu {
     display: flex;
     order: 3;
-    position: relative;  /* 修改定位 */
-    right: 0;           /* 确保右对齐 */
+    position: relative;
+    right: 0;
   }
   
   .main-nav {
@@ -220,24 +220,33 @@ onMounted(() => {
   .main-nav ul {
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    max-width: 300px; /* 添加最大宽度 */
+    margin: 0 auto; /* 居中对齐 */
+    padding: 0;
+    position: absolute; /* 添加这行 */
+    left: 50%; /* 添加这行 */
+    transform: translateX(-50%); /* 添加这行 */
   }
   
   .main-nav li {
     margin: 15px 0;
+    width: 100%;
+    text-align: center;
   }
   
   .main-nav a {
     font-size: 18px;
+    display: inline-block;
+    width: 100%; /* 修改为100% */
+    text-align: center;
   }
   
   .desktop-only {
     display: none;
   }
   
-  .language-menu-item {
-    display: block;
-  }
-  
+  .language-menu-item,
   .theme-menu-item {
     display: block;
   }

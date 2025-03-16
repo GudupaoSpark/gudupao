@@ -128,6 +128,7 @@ onMounted(() => {
   text-decoration: none;
   font-size: 16px;
   transition: color 0.3s;
+  font-weight: 600;  /* 添加字体加粗 */
 }
 
 .main-nav a:hover {
@@ -240,6 +241,7 @@ onMounted(() => {
     display: inline-block;
     width: 100%; /* 修改为100% */
     text-align: center;
+    font-weight: 600;  /* 在移动端视图也添加字体加粗 */
   }
   
   .desktop-only {

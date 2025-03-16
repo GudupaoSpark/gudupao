@@ -38,7 +38,15 @@
             </div>
         </div>
 
-        <TimelineComponent :timelineItems="timelineItems" />
+        <div class="timeline-section">
+            <h2 class="section-title glow-text">{{ $t('home.timeline.title') }}</h2>
+            <div class="timeline-wrapper"
+                v-motion
+                :initial="{ opacity: 0, y: 50 }"
+                :visible="{ opacity: 1, y: 0, transition: { duration: 800 } }">
+                <TimelineComponent :timelineItems="timelineItems" />
+            </div>
+        </div>
     </div>
 </template>
 
@@ -294,6 +302,7 @@ useHead({
 .brand-name {
     font-size: 4rem;
     margin: 0;
+    font-weight: 900;  /* 增加字体粗细到最粗 */
     background: linear-gradient(90deg, #00B4DB, #FFC837);
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -304,6 +313,7 @@ useHead({
 .brand-name-cn {
     font-size: 2.5rem;
     margin: 5px 0 0 0;
+    font-weight: 900;  /* 增加字体粗细到最粗 */
     background: linear-gradient(90deg, #00B4DB, #FFC837);
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -434,5 +444,41 @@ useHead({
 .fade-up-enter-from {
     opacity: 0;
     transform: translateY(30px);
+}
+</style>
+
+<style scoped>
+.timeline-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 1rem auto 8rem;  /* 修改上边距为 1rem */
+    padding: 0;
+    margin-left: 6.15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    z-index: 10;
+    overflow-x: auto;  /* 添加横向滚动 */
+    -webkit-overflow-scrolling: touch;  /* 增加滚动平滑度 */
+    scrollbar-width: none;  /* 隐藏滚动条 Firefox */
+    -ms-overflow-style: none;  /* 隐藏滚动条 IE/Edge */
+}
+
+/* 隐藏滚动条 Chrome/Safari */
+.timeline-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .timeline-wrapper {
+        margin-left: -2rem;
+        padding: 0 1rem;  /* 添加一些内边距 */
+        cursor: grab;  /* 添加抓取光标 */
+    }
+    
+    .timeline-wrapper:active {
+        cursor: grabbing;  /* 抓取时的光标 */
+    }
 }
 </style>

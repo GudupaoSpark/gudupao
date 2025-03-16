@@ -451,29 +451,32 @@ useHead({
 .timeline-wrapper {
     width: 100%;
     max-width: 1200px;
-    margin: 1rem auto 8rem;  /* 修改上边距为 1rem */
+    margin: 1rem auto 8rem;
     padding: 0;
-    margin-left: 6.15rem;
+    margin-left: 0;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     position: relative;
     z-index: 10;
-    overflow-x: auto;  /* 添加横向滚动 */
-    -webkit-overflow-scrolling: touch;  /* 增加滚动平滑度 */
-    scrollbar-width: none;  /* 隐藏滚动条 Firefox */
-    -ms-overflow-style: none;  /* 隐藏滚动条 IE/Edge */
+    overflow-x: auto;  /* 恢复横向滚动 */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
-/* 隐藏滚动条 Chrome/Safari */
-.timeline-wrapper::-webkit-scrollbar {
-    display: none;
+.timeline-section {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 2rem;
+    box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
     .timeline-wrapper {
-        margin-left: -2rem;
-        padding: 0 1rem;  /* 添加一些内边距 */
+        margin-left: 0;
+        padding: 0 1rem;
+        width: 100%;
         cursor: grab;  /* 添加抓取光标 */
     }
     

@@ -229,12 +229,13 @@ onMounted(() => {
   .main-nav {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 5%;
+    right: 6.5%;
+    transform: translateY(-120%);
+    width: auto;
     height: 100vh;
     background-color: var(--bg-color);
     z-index: 100;
-    transform: translateY(-100%);
     transition: transform 0.3s ease;
     display: flex;
     justify-content: center;
@@ -243,7 +244,7 @@ onMounted(() => {
   }
   
   .main-nav.active {
-    transform: translateY(0);
+    transform: translateY(95px);
   }
   
   .main-nav ul {

@@ -322,6 +322,7 @@ useHead({
     background: linear-gradient(90deg, #00B4DB, #FFC837);
     background-size: 200% auto;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradient 3s linear infinite;
 }
@@ -333,6 +334,7 @@ useHead({
     background: linear-gradient(90deg, #00B4DB, #FFC837);
     background-size: 200% auto;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradient 3s linear infinite;
 }

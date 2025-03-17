@@ -73,6 +73,7 @@ onMounted(() => {
   justify-content: space-between;
   align-items: center;
   height: 70px;
+  z-index: 100;
   position: relative;
   box-sizing: border-box;
 }
@@ -229,13 +230,13 @@ onMounted(() => {
   .main-nav {
     position: fixed;
     top: 0;
-    left: 5%;
-    right: 6.5%;
+    left: -5%;
+    right: -5%;
     transform: translateY(-120%);
     width: auto;
     height: 100vh;
-    background-color: var(--bg-color);
-    z-index: 100;
+    background-color: var(--header-bg);
+    z-index: 99;
     transition: transform 0.3s ease;
     display: flex;
     justify-content: center;
@@ -244,7 +245,8 @@ onMounted(() => {
   }
   
   .main-nav.active {
-    transform: translateY(95px);
+    transform: translateY(0);
+    z-index: 99;
   }
   
   .main-nav ul {

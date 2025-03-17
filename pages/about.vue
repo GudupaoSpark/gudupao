@@ -284,6 +284,7 @@ onUnmounted(() => {
         );
     background-size: 300% auto;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shine 6s ease-in-out infinite;
     text-align: center;
@@ -315,6 +316,7 @@ onUnmounted(() => {
         );
     background-size: 300% auto;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shine 6s ease-in-out infinite;
     max-width: 800px;

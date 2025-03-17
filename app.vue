@@ -1,5 +1,6 @@
 <template>
   <div class="app-container">
+    <LoadingOverlay />
     <Header />
     <main class="main-content">
       <NuxtPage />

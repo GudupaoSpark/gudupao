@@ -289,7 +289,7 @@ onUnmounted(() => {
     text-align: center;
     width: 100%;
     display: inline-block;
-    transform: translateX(2vw);  /* 修改这行，向右移动 */
+    transform: translateX(1.8vw);  /* 修改为向左移动 */
     white-space: nowrap;
 }
 
@@ -349,11 +349,33 @@ onUnmounted(() => {
 .team-section,
 .vision-section {
     width: 100%;
-    margin: 0;
-    padding: 120px 0;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 120px 20px;
-    text-align: center;
+    box-sizing: border-box; /* 添加这行 */
+}
+
+.team-grid,
+.vision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 0 20px; /* 添加这行 */
+    box-sizing: border-box; /* 添加这行 */
+    max-width: 100%; /* 添加这行 */
+}
+
+@media (max-width: 768px) {
+    .team-grid,
+    .vision-grid {
+        grid-template-columns: 1fr; /* 修改这行 */
+        padding: 0 15px; /* 添加这行 */
+    }
+
+    .team-section,
+    .vision-section {
+        padding: 60px 0; /* 修改这行 */
+    }
 }
 
 .team-grid {

@@ -77,9 +77,18 @@ onMounted(() => {
 }
 
 .main-nav {
-  position: absolute;  /* 添加这行 */
-  left: 50%;          /* 添加这行 */
-  transform: translateX(-50%);  /* 添加这行 */
+  /* 移除绝对定位，改用 flex 布局 */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative; /* 添加相对定位 */
+  z-index: 101; /* 确保下拉菜单显示在其他元素之上 */
 }
 
 .main-nav ul {
@@ -119,16 +128,11 @@ onMounted(() => {
   text-decoration: none;
   font-size: 16px;
   transition: color 0.3s;
+  font-weight: 600;  /* 添加字体加粗 */
 }
 
 .main-nav a:hover {
   color: var(--link-hover-color);
-}
-
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
 
 .desktop-only {
@@ -182,11 +186,16 @@ onMounted(() => {
     flex-wrap: wrap;
     height: auto;
     justify-content: space-between;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .hamburger-menu {
     display: flex;
     order: 3;
+    position: relative;
+    right: 0;
   }
   
   .main-nav {
@@ -212,24 +221,34 @@ onMounted(() => {
   .main-nav ul {
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    max-width: 300px; /* 添加最大宽度 */
+    margin: 0 auto; /* 居中对齐 */
+    padding: 0;
+    position: absolute; /* 添加这行 */
+    left: 50%; /* 添加这行 */
+    transform: translateX(-50%); /* 添加这行 */
   }
   
   .main-nav li {
     margin: 15px 0;
+    width: 100%;
+    text-align: center;
   }
   
   .main-nav a {
     font-size: 18px;
+    display: inline-block;
+    width: 100%; /* 修改为100% */
+    text-align: center;
+    font-weight: 600;  /* 在移动端视图也添加字体加粗 */
   }
   
   .desktop-only {
     display: none;
   }
   
-  .language-menu-item {
-    display: block;
-  }
-  
+  .language-menu-item,
   .theme-menu-item {
     display: block;
   }

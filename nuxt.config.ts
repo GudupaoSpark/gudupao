@@ -4,8 +4,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@vueuse/motion/nuxt',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    // 移除 @tsparticles/vue3
   ],
+  // 移除 build.transpile 配置
   css: ['~/assets/css/theme.css','@fortawesome/fontawesome-svg-core/styles.css'],
   // @ts-ignore - i18n module types
   i18n: {
@@ -34,6 +36,13 @@ export default defineNuxtConfig({
       useCookie: true,
       cookieKey: 'i18n_redirected',
       redirectOn: 'root'
+    }
+  },
+  app: {
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/iconlogo.png' }
+      ]
     }
   }
 })

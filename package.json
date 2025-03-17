@@ -17,6 +17,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "@nuxt/types": "^2.18.1",
     "@nuxtjs/i18n": "^9.3.1",
+    "@octokit/rest": "^21.1.1",
     "@tsparticles/vue3": "^3.0.1",
     "@vueuse/motion": "^3.0.3",
     "nuxt": "^3.16.0",

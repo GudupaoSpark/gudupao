@@ -72,6 +72,7 @@ onMounted(() => {
   justify-content: space-between;
   color: var(--text-color);
   transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  font-weight: 600;  /* 添加字体加粗 */
 }
 
 .dropdown-icon {
@@ -101,6 +102,7 @@ onMounted(() => {
 .language-option {
   padding: 8px 12px;
   cursor: pointer;
+  font-weight: 600;  /* 添加字体加粗 */
 }
 
 .language-option:hover {

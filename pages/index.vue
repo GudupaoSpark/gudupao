@@ -38,7 +38,15 @@
             </div>
         </div>
 
-        <TimelineComponent :timelineItems="timelineItems" />
+        <div class="timeline-section">
+            <h2 class="section-title glow-text">{{ $t('home.timeline.title') }}</h2>
+            <div class="timeline-wrapper"
+                v-motion
+                :initial="{ opacity: 0, y: 50 }"
+                :visible="{ opacity: 1, y: 0, transition: { duration: 800 } }">
+                <TimelineComponent :timelineItems="timelineItems" />
+            </div>
+        </div>
     </div>
 </template>
 
@@ -294,6 +302,7 @@ useHead({
 .brand-name {
     font-size: 4rem;
     margin: 0;
+    font-weight: 900;  /* 增加字体粗细到最粗 */
     background: linear-gradient(90deg, #00B4DB, #FFC837);
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -304,6 +313,7 @@ useHead({
 .brand-name-cn {
     font-size: 2.5rem;
     margin: 5px 0 0 0;
+    font-weight: 900;  /* 增加字体粗细到最粗 */
     background: linear-gradient(90deg, #00B4DB, #FFC837);
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -434,5 +444,44 @@ useHead({
 .fade-up-enter-from {
     opacity: 0;
     transform: translateY(30px);
+}
+</style>
+
+<style scoped>
+.timeline-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 1rem auto 8rem;
+    padding: 0;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    overflow-x: auto;  /* 恢复横向滚动 */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.timeline-section {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .timeline-wrapper {
+        margin-left: 0;
+        padding: 0 1rem;
+        width: 100%;
+        cursor: grab;  /* 添加抓取光标 */
+    }
+    
+    .timeline-wrapper:active {
+        cursor: grabbing;  /* 抓取时的光标 */
+    }
 }
 </style>

@@ -3,7 +3,6 @@
         v-motion
         :initial="{ opacity: 0, y: 50 }"
         :visible="{ opacity: 1, y: 0, transition: { duration: 800 } }">
-        <h2 class="section-title glow-text">{{ $t('home.timeline.title') }}</h2>
         <div class="timeline">
             <div v-for="(item, index) in timelineItems" 
                 :key="index"

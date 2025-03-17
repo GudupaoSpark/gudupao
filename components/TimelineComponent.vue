@@ -31,44 +31,46 @@ defineProps({
     width: 100%;
     max-width: 1200px;
     margin: 4rem auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
     position: relative;
 }
 
 .timeline {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
     position: relative;
-    padding: 2rem 0;
+    padding: 0 1rem;
     width: 100%;
+    min-height: 400px;
 }
 
 .timeline::before {
     content: '';
     position: absolute;
-    top: 2rem;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #00B4DB, #FFC837);
+    top: 0;
+    left: 115px;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, #00B4DB, #FFC837);
     z-index: 1;
 }
 
-.timeline-item {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 2;
-    padding: 0 1rem;
-    transition: all 0.3s ease;
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 1rem;
+        transform: none;
+    }
 }
 
-.timeline-item:hover {
-    transform: scale(1.05);
+.timeline-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+    padding: 2rem 0;
+    width: 100%;
+    transition: all 0.3s ease;
 }
 
 .timeline-date {
@@ -76,17 +78,84 @@ defineProps({
     color: var(--text-color);
     padding: 0.5rem 1rem;
     border-radius: 20px;
-    margin-bottom: 1rem;
     font-weight: bold;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
-    top: -1rem;
     cursor: pointer;
     transition: transform 0.3s ease;
+    width: 160px;
+    text-align: center;
+    margin-right: 2rem;
 }
 
-.timeline-date:hover {
+.timeline-content {
+    background: var(--hover-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin-left: 1rem;
+    opacity: 1;
+    transform: none;
+    position: relative;
+    pointer-events: auto;
+    max-width: 60%;
+}
+
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 1rem;
+        transform: none;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .timeline-date {
+        width: auto;
+        margin-right: 0;
+        margin-bottom: 1rem;
+        margin-left: 2rem;
+    }
+
+    .timeline-date::after {
+        left: -2.25rem;
+        right: auto;
+    }
+
+    .timeline-content {
+        max-width: 100%;
+        margin-left: 2rem;
+    }
+}
+
+.timeline-item {
+    transform-origin: 110px 50%;
+}
+
+.timeline-item:hover {
     transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .timeline-item {
+        transform-origin: 1rem 50%;
+    }
+}
+
+.timeline-date::after {
+    content: '';
+    position: absolute;
+    right: -1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: var(--hover-bg);
+    border-radius: 50%;
+    z-index: 2;
 }
 
 .dark .timeline-date {
@@ -95,28 +164,20 @@ defineProps({
 }
 
 .timeline-content {
-    text-align: center;
     background: var(--hover-bg);
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 250px;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    pointer-events: none;
+    flex: 1;
+    margin-left: 1rem;
+    opacity: 1;
+    transform: none;
+    position: relative;
+    pointer-events: auto;
+    max-width: 60%;
 }
 
-.timeline-date:hover + .timeline-content {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-    pointer-events: auto;
-}
+
 
 .dark .timeline-content {
     background: rgba(32, 32, 32, 0.95);

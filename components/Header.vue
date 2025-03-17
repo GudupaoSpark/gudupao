@@ -68,19 +68,47 @@ onMounted(() => {
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 70px;
   position: relative;
+  box-sizing: border-box;
 }
 
 .main-nav {
-  /* 移除绝对定位，改用 flex 布局 */
   flex: 1;
   display: flex;
   justify-content: center;
+  min-width: 0;
+  margin: 0 20px;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+
+.main-nav li {
+  margin: 0 10px;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.main-nav a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+  font-weight: 600;
+  padding: 5px;
+  display: block;
 }
 
 .header-right {

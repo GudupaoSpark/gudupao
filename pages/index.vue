@@ -3,17 +3,17 @@
         <div class="logo-text-container" 
             v-motion
             :initial="{ opacity: 0, y: 100 }"
-            :enter="{ opacity: 1, y: 0, transition: { duration: 1000 } }">
+            :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 1000 } }">
             <div class="logo-container" 
                 v-motion
                 :initial="{ opacity: 0, scale: 0.5 }"
-                :enter="{ opacity: 1, scale: 1, transition: { duration: 800, delay: 200 } }">
+                :visibleOnce="{ opacity: 1, scale: 1, transition: { duration: 800, delay: 200 } }">
                 <img src="/logo.png" alt="Gudupao Logo" class="square-logo hover-rotate" />
             </div>
             <div class="text-container"
                 v-motion
                 :initial="{ opacity: 0, x: 50 }"
-                :enter="{ opacity: 1, x: 0, transition: { duration: 800, delay: 400 } }">
+                :visibleOnce="{ opacity: 1, x: 0, transition: { duration: 800, delay: 400 } }">
                 <h1 class="brand-name">{{ $t('home.brandName') }}</h1>
                 <h2 class="brand-name-cn">{{ $t('home.brandNameCn') }}</h2>
             </div>
@@ -22,7 +22,7 @@
         <div class="tech-stack-container"
             v-motion
             :initial="{ opacity: 0, y: 50 }"
-            :visible="{ opacity: 1, y: 0, transition: { duration: 800 } }">
+            :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 800 } }">
             <h2 class="section-title glow-text">{{ $t('home.techStack.title') }}</h2>
             <div class="tech-stack-grid">
                 <div v-for="(tech, index) in techStack" 
@@ -30,7 +30,7 @@
                     class="tech-card floating"
                     v-motion
                     :initial="{ opacity: 0, y: 50 }"
-                    :visible="{ opacity: 1, y: 0, transition: { duration: 600, delay: index * 200 } }">
+                    :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 600, delay: index * 200 } }">
                     <img :src="tech.icon" :alt="tech.name" class="tech-icon">
                     <h3 class="tech-name">{{ $t(`home.techStack.${tech.key}.name`) }}</h3>
                     <p class="tech-desc">{{ $t(`home.techStack.${tech.key}.desc`) }}</p>
@@ -43,7 +43,7 @@
             <div class="timeline-wrapper"
                 v-motion
                 :initial="{ opacity: 0, y: 50 }"
-                :visible="{ opacity: 1, y: 0, transition: { duration: 800 } }">
+                :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 800 } }">
                 <TimelineComponent :timelineItems="timelineItems" />
             </div>
         </div>
@@ -51,6 +51,22 @@
 </template>
 
 <script setup>
+const isAnimationEnabled = ref(true)
+
+const checkReducedMotion = () => {
+    if (typeof window !== 'undefined') {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+        isAnimationEnabled.value = !prefersReducedMotion.matches
+        prefersReducedMotion.addEventListener('change', (event) => {
+            isAnimationEnabled.value = !event.matches
+        })
+    }
+}
+
+onMounted(() => {
+    checkReducedMotion()
+})
+
 const techStack = [
     {
         key: 'vue',

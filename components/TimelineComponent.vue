@@ -2,7 +2,7 @@
     <div class="timeline-container"
         v-motion
         :initial="{ opacity: 0, y: 50 }"
-        :visible="{ opacity: 1, y: 0, transition: { duration: 800 } }">
+        :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 800 } }">
         <div class="timeline">
             <div v-for="(item, index) in timelineItems" 
                 :key="index"

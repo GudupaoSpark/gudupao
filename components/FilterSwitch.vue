@@ -48,14 +48,10 @@ background.style.transform = `translateX(${offsetX}px) scale(1)`;
 }
 
 onMounted(() => {
-  selectFilter(props.selectedFilter);
-  const index = props.filterOptions.indexOf(props.selectedFilter);
-  const button = document.querySelectorAll('.filter-button')[index];
-  const buttonRect = button.getBoundingClientRect();
-  const containerRect = document.querySelector('.filter-switch-container').getBoundingClientRect();
-  const background = document.querySelector('.filter-background');
-  const offsetX = (buttonRect.left - containerRect.left) + (buttonRect.width / 2) - (containerRect.width / 2)+20;
-  background.style.transform = `translateX(${offsetX}px) scale(1)`;
+  setTimeout(() => {
+    selectFilter(props.selectedFilter);
+  }, 1000);
+  
 })
 </script>
 

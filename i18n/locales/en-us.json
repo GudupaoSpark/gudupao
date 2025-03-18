@@ -1,0 +1,147 @@
+{
+  "lang": "en-us",
+  "home": {
+    "title": "Gudupao | Light Up The Future",
+    "brandName": "GudupaoSpark",
+    "brandNameCn": "Light Up The Future",
+    "techStack": {
+      "title": "Our Tech Stack",
+      "vue": {
+        "name": "Vue.js",
+        "desc": "Progressive JavaScript Framework"
+      },
+      "nuxt": {
+        "name": "Nuxt.js",
+        "desc": "The Full-stack Framework for Vue.js"
+      },
+      "python": {
+        "name": "Python",
+        "desc": "Interpreted Scripting Language"
+      },
+      "fastapi": {
+        "name": "FastAPI",
+        "desc": "High-performance Python Web Framework"
+      }
+    },
+    "timeline": {
+      "title": "Development Timeline",
+      "items": [
+        {
+          "date": "Jan 31, 2023",
+          "title": "Initial Establishment",
+          "desc": "On Jan 31, 2023, at 4:25 PM, Gudupao Studio (predecessor of Gudupao Spark Inc.) was established in Huadu, Guangzhou, founded by a group of middle school students who loved playing Minecraft"
+        },
+        {
+          "date": "Mar 1, 2023",
+          "title": "New Name, New Logo",
+          "desc": "In Mar 2023, the new name Gudupao Spark Studio was born (second phase Mar-Jul), along with a new logo"
+        },
+        {
+          "date": "Aug 14, 2023",
+          "title": "Reorganization After Internal Split",
+          "desc": "The remaining members formed a new studio continuing as Gudupao Spark Studio (third phase)"
+        },
+        {
+          "date": "Nov 1, 2023",
+          "title": "Period of Uncertainty",
+          "desc": "During this time, the studio lacked clear development goals (fourth phase Aug to Nov 2023, also known as the uncertainty phase)"
+        },
+        {
+          "date": "Dec 1, 2023",
+          "title": "Beginning of Independent Development",
+          "desc": "Proposed the Xianyu Analysis Project, began the period of independent algorithm software development, established feasible phase goals, and continued development. The studio officially entered its fifth phase (Dec 2023 to present)"
+        },
+        {
+          "date": "Jan 30, 2024",
+          "title": "Xianyu Analysis Release",
+          "desc": "Xianyu Analysis was released after two months of effort by three members of Gudupao Studio. The promotional video premiered on Bilibili (B-site), marking the success of Gudupao Spark Studio's independent development path!!!"
+        },
+        {
+          "date": "Jan 31, 2024",
+          "title": "Studio's First Anniversary",
+          "desc": "After a year of challenges, the studio celebrated its first anniversary. Throughout this year, the studio experienced difficult times and periods of uncertainty. We picked up and lit our torch in the vast snow, and we will illuminate our own future ahead."
+        }
+      ]
+    }
+  },
+  "welcome": "Welcome to Nuxt I18n",
+  "description": "This is a multilingual site built with Nuxt and i18n module.",
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "projects": "Projects",
+    "contact": "Contact Us"
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode",
+    "toggle": "Toggle Theme"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "contactUs": "Contact Us",
+    "address": "Hong Kong, China",
+    "Friendly-links": "Links",
+    "rights": "All rights reserved"
+  },
+  "about": {
+    "title": "About Gudupao",
+    "description": "We are a group of passionate young people dedicated to changing the world through technology and making innovation more fun.",
+    "teamTitle": "Core Team",
+    "teamIntroTitle": "Team Introduction",
+    "teamIntroDescription": "Gudupao Spark was established on January 31, 2023, at 4:25 PM in Huadu District, Guangzhou, Guangdong Province, China. It started as a tech studio created by a group of children who loved Minecraft to maintain their Minecraft server. The original Gudupao Studio has now grown into Gudupao Spark Inc., and we're still growing! Keep going!!!",
+    "team": [
+      {
+        "name": "Debug967",
+        "position": "Chairman & CEO",
+        "description": "Years of full-stack development experience, passionate about exploring new technologies and driving team innovation."
+      },
+      {
+        "name": "Cherry",
+        "position": "Chairman Secretary & CTO",
+        "description": "Loves cute things, passionate about technology and committed to driving team's technical development."
+      },
+      {
+        "name": "Youzi",
+        "position": "Software Department Manager",
+        "description": "Professional backend engineer, skilled in algorithm research, a true tech geek"
+      }
+    ],
+    "visionTitle": "Our Vision",
+    "vision": [
+      {
+        "title": "Technical Innovation",
+        "description": "Continuously exploring cutting-edge technologies to bring better product experiences to users."
+      },
+      {
+        "title": "User First",
+        "description": "Always focusing on user needs to create ultimate product experiences."
+      },
+      {
+        "title": "Open Sharing",
+        "description": "Embracing the open-source community, promoting technical exchange and innovation."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Have any questions or suggestions? Feel free to contact us",
+    "getInTouch": "Get in Touch",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Enter your name",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email address",
+      "message": "Message",
+      "messagePlaceholder": "Enter your message",
+      "submit": "Send Message"
+    }
+  },
+  "projects": {
+    "title": "Our projects",
+    "searchPlaceholder": "Search projects",
+    "all": "All",
+    "os":"Open Source",
+    "cs":"Closed Source"
+  }
+}

@@ -1,4 +1,5 @@
 {
+  "lang": "en-us",
   "home": {
     "title": "Gudupao | Light Up The Future",
     "brandName": "GudupaoSpark",
@@ -68,7 +69,7 @@
   "nav": {
     "home": "Home",
     "about": "About Us",
-    "services": "Services",
+    "projects": "Projects",
     "contact": "Contact Us"
   },
   "theme": {
@@ -135,5 +136,12 @@
       "messagePlaceholder": "Enter your message",
       "submit": "Send Message"
     }
+  },
+  "projects": {
+    "title": "Our projects",
+    "searchPlaceholder": "Search projects",
+    "all": "All",
+    "os":"Open Source",
+    "cs":"Closed Source"
   }
 }

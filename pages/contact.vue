@@ -84,13 +84,12 @@
   </template>
   
   <script setup>
-  import { useHead } from '#imports'  // 修改这行
-  
-  
-  // 设置页面标题
-  useHead({
-    title: 'Contact | Gudupao'
-  })
+import { useHead } from '#imports'  // 修改这行
+const { t } = useI18n()
+// Set page title
+useHead({
+    title: t("nav.contact")+' | Gudupao'
+})
   
   const formData = ref({
     name: '',

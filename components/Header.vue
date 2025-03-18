@@ -15,7 +15,7 @@
         <ul>
           <li><NuxtLink to="/" @click="closeMenu">{{ $t('nav.home') }}</NuxtLink></li>
           <li><NuxtLink to="/about" @click="closeMenu">{{ $t('nav.about') }}</NuxtLink></li>
-          <li><NuxtLink to="/services" @click="closeMenu">{{ $t('nav.services') }}</NuxtLink></li>
+          <li><NuxtLink to="/projects" @click="closeMenu">{{ $t('nav.projects') }}</NuxtLink></li>
           <li><NuxtLink to="/contact" @click="closeMenu">{{ $t('nav.contact') }}</NuxtLink></li>
           <li class="language-menu-item"><LanguageSwitcher /></li>
           <li class="theme-menu-item"><ThemeSwitcher /></li>

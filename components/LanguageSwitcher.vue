@@ -39,9 +39,12 @@ function toggleDropdown() {
 
 function switchLanguage(localeCode) {
   // 使用setLocale方法切换语言，这会同时更新cookie
-  // 在no_prefix策略下不会改变URL
   setLocale(localeCode)
+  // 使用router.replace更新URL路径来触发页面内容的重新渲染
+  router.replace(switchLocalePath(localeCode))
   isOpen.value = false
+  // 硬重载页面以确保完全刷新
+  window.location.reload()
 }
 
 // 点击组件外部时关闭下拉菜单

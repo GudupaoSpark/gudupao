@@ -146,7 +146,11 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useHead } from '#imports'  // 修改这行
-
+const { t } = useI18n()
+// Set page title
+useHead({
+    title: t("nav.about")+' | Gudupao'
+})
 const animationExecuted = ref(false)
 
 // 检查动画状态的函数
@@ -165,10 +169,7 @@ onMounted(() => {
     checkAndRunAnimation()
 })
 
-// Set page title
-useHead({
-    title: 'About | Gudupao'
-})
+
 
 // 直接初始化数据，不需要等待 onMounted
 const teamMembers = ref([

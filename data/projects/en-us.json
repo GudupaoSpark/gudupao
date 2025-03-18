@@ -1,0 +1,23 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "Web Development",
+      "description": "Providing professional web application development projects, including front-end and back-end development, ensuring high-performance and user-friendly solutions.",
+      "tags": ["Frontend Development", "Backend Development", "Web Applications"],
+      "os":true
+    },
+    {
+      "id": 2,
+      "title": "Mobile App Development",
+      "description": "Developing mobile applications for iOS and Android platforms, offering both native and cross-platform solutions.",
+      "tags": ["iOS", "Android", "Mobile Development"]
+    },
+    {
+      "id": 3,
+      "title": "Cloud project Solutions",
+      "description": "Providing comprehensive cloud computing projects, including cloud migration, architecture design, and maintenance.",
+      "tags": ["Cloud Computing", "Architecture Design", "System Maintenance"]
+    }
+  ]
+}

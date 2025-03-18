@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "Web開發",
+      "description": "提供專業的Web應用開發服務，包括前端和後端開發，確保高性能和用戶友好的解決方案。",
+      "detailedDescription": "我們的Web開發團隊專注於創建現代化、響應式的Web應用。從企業級應用到電子商務平台，我們運用最新技術和最佳實踐，確保每個項目都能達到最高標準。我們的服務包括：\n- 響應式網站設計\n- 前端框架開發（React、Vue、Angular）\n- 後端API開發\n- 數據庫設計與優化\n- 性能優化和SEO",
+      "link": "/projects/web-development",
+      "tags": ["前端開發", "後端開發", "Web應用"],
+      "os":true
+    },
+    {
+      "id": 2,
+      "title": "移動應用開發",
+      "description": "開發iOS和Android平台的移動應用，提供原生和跨平台解決方案。",
+      "detailedDescription": "我們的移動應用開發團隊擅長打造流暢、直觀的用戶體驗。無論是原生應用還是跨平台解決方案，我們都能確保應用在各種設備上完美運行。我們提供：\n- iOS原生應用開發\n- Android原生應用開發\n- Flutter跨平台開發\n- 應用性能優化\n- 應用商店發布支持",
+      "link": "/projects/mobile-development",
+      "tags": ["iOS", "Android", "移動開發"]
+    },
+    {
+      "id": 3,
+      "title": "雲服務解決方案",
+      "description": "提供全面的雲計算服務，包括雲遷移、架構設計和維護。",
+      "detailedDescription": "我們的雲服務解決方案幫助企業實現數字化轉型，提供安全、可擴展的雲基礎設施。我們的專業服務包括：\n- 雲架構設計\n- 雲遷移策略和實施\n- 混合雲解決方案\n- 雲安全管理\n- 24/7監控和維護支持",
+      "link": "/projects/cloud-solutions",
+      "tags": ["雲計算", "架構設計", "系統維護"]
+    }
+  ]
+}

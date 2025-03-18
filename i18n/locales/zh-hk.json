@@ -1,4 +1,5 @@
 {
+  "lang": "zh-hk",
   "home": {
     "title": "Gudupao | 點亮未來",
     "brandName": "GudupaoSpark",
@@ -68,7 +69,7 @@
   "nav": {
     "home": "首頁",
     "about": "關於我們",
-    "services": "服務",
+    "projects": "項目",
     "contact": "聯絡我們"
   },
   "theme": {
@@ -135,5 +136,12 @@
       "messagePlaceholder": "請輸入您的留言內容",
       "submit": "發送訊息"
     }
+  },
+  "projects": {
+    "title": "我們的服務",
+    "searchPlaceholder": "搜索",
+    "all": "全部",
+    "os":"開源",
+    "cs":"閉源"
   }
 }

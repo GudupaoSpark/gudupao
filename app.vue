@@ -21,7 +21,7 @@ useHead({
 </script>
 <script client>
 console.log(`%c𝓖𝓾𝓭𝓾𝓹𝓪𝓸`, `color: #007bff;font-size: 48px`)
-console.log(`%cJoin Us：hr@gudupao.top`, `color: #007bff;font-size: 24px;background: linear-gradient(90deg, #00B4DB, #FFC837);`)
+console.log(`%cJoin Us: hr@gudupao.top`, `color: #007bff;font-size: 24px;background: linear-gradient(90deg, #00B4DB, #FFC837);`)
 </script>
 
 <style>

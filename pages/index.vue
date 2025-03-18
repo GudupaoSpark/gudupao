@@ -294,25 +294,33 @@ useHead({
 .brand-name {
     font-size: 4rem;
     margin: 0;
-    font-weight: 900;  /* 增加字体粗细到最粗 */
+    font-weight: 900;
     background: linear-gradient(90deg, #00B4DB, #FFC837);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradient 3s linear infinite;
+    text-shadow: 0 0 10px rgba(0, 180, 219, 0.15),
+                0 0 20px rgba(0, 180, 219, 0.1),
+                0 0 30px rgba(255, 200, 55, 0.05),
+                0 0 40px rgba(255, 200, 55, 0.025);
 }
 
 .brand-name-cn {
     font-size: 2.5rem;
     margin: 5px 0 0 0;
-    font-weight: 900;  /* 增加字体粗细到最粗 */
+    font-weight: 900;
     background: linear-gradient(90deg, #00B4DB, #FFC837);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradient 3s linear infinite;
+    text-shadow: 0 0 10px rgba(0, 180, 219, 0.15),
+                0 0 20px rgba(0, 180, 219, 0.1),
+                0 0 30px rgba(255, 200, 55, 0.05),
+                0 0 40px rgba(255, 200, 55, 0.025);
 }
 
 @keyframes gradient {

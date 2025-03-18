@@ -26,24 +26,39 @@
       "title": "Development Timeline",
       "items": [
         {
-          "date": "Dec 2023",
-          "title": "Gudupao Spark Founded",
-          "desc": "Committed to creating high-quality tech learning platform"
+          "date": "Jan 31, 2023",
+          "title": "Initial Establishment",
+          "desc": "On Jan 31, 2023, at 4:25 PM, Gudupao Studio (predecessor of Gudupao Spark Inc.) was established in Huadu, Guangzhou, founded by a group of middle school students who loved playing Minecraft"
         },
         {
-          "date": "Jan 2024",
-          "title": "First Course Launch",
-          "desc": "Released Advanced Vue.js Development Course"
+          "date": "Mar 1, 2023",
+          "title": "New Name, New Logo",
+          "desc": "In Mar 2023, the new name Gudupao Spark Studio was born (second phase Mar-Jul), along with a new logo"
         },
         {
-          "date": "Mar 2024",
-          "title": "Community Launch",
-          "desc": "Tech community officially opened"
+          "date": "Aug 14, 2023",
+          "title": "Reorganization After Internal Split",
+          "desc": "The remaining members formed a new studio continuing as Gudupao Spark Studio (third phase)"
         },
         {
-          "date": "Jun 2024",
-          "title": "Course System Complete",
-          "desc": "Full-stack development curriculum system completed"
+          "date": "Nov 1, 2023",
+          "title": "Period of Uncertainty",
+          "desc": "During this time, the studio lacked clear development goals (fourth phase Aug to Nov 2023, also known as the uncertainty phase)"
+        },
+        {
+          "date": "Dec 1, 2023",
+          "title": "Beginning of Independent Development",
+          "desc": "Proposed the Xianyu Analysis Project, began the period of independent algorithm software development, established feasible phase goals, and continued development. The studio officially entered its fifth phase (Dec 2023 to present)"
+        },
+        {
+          "date": "Jan 30, 2024",
+          "title": "Xianyu Analysis Release",
+          "desc": "Xianyu Analysis was released after two months of effort by three members of Gudupao Studio. The promotional video premiered on Bilibili (B-site), marking the success of Gudupao Spark Studio's independent development path!!!"
+        },
+        {
+          "date": "Jan 31, 2024",
+          "title": "Studio's First Anniversary",
+          "desc": "After a year of challenges, the studio celebrated its first anniversary. Throughout this year, the studio experienced difficult times and periods of uncertainty. We picked up and lit our torch in the vast snow, and we will illuminate our own future ahead."
         }
       ]
     }

@@ -290,7 +290,6 @@ onUnmounted(() => {
     text-align: center;
     width: 100%;
     display: inline-block;
-    transform: translateX(1.8vw);  /* 修改为向左移动 */
     white-space: nowrap;
 }
 

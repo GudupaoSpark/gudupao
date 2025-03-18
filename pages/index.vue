@@ -86,32 +86,8 @@ const techStack = [
     }
 ]
 
-const timelineItems = [
-    {
-        key: 'start',
-        date: '2024-01',
-        title: '项目启动',
-        desc: '开始构建新一代在线教育平台'
-    },
-    {
-        key: 'tech',
-        date: '2024-02',
-        title: '技术选型',
-        desc: '选择Vue3、Nuxt3、Python和FastAPI作为核心技术栈'
-    },
-    {
-        key: 'dev',
-        date: '2024-03',
-        title: '开发阶段',
-        desc: '进入全面开发阶段，打造优质学习体验'
-    },
-    {
-        key: 'future',
-        date: '2024-04',
-        title: '未来展望',
-        desc: '持续优化，打造领先的在线教育平台'
-    }
-]
+// 生成指定数量的时间线项目
+const timelineItems = Array.from({ length: 7 }, () => ({}))
 
 useHead({
     title: 'Gudupao | Light Up The Future'

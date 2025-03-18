@@ -33,6 +33,7 @@ defineProps({
     margin: 4rem auto;
     padding: 0 1rem;
     position: relative;
+    overflow-x: hidden;
 }
 
 .timeline {

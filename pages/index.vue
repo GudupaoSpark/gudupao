@@ -453,10 +453,7 @@ useHead({
     align-items: center;
     position: relative;
     z-index: 10;
-    overflow-x: auto;  /* 恢复横向滚动 */
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    overflow-x: hidden;
 }
 
 .timeline-section {

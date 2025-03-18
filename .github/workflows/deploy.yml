@@ -3,7 +3,7 @@ name: Deploy Nuxt App
 on:
   push:
     branches:
-      - new
+      - main
 
 jobs:
   build-and-deploy:

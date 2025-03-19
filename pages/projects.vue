@@ -224,13 +224,11 @@ const toggleTag = (tag) => {
 
 .tag-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 4px var(--text-color);
 }
 
 .tag-button.active {
-  background: var(--primary-color);
-  color: white;
-  border-color: var(--primary-color);
+  border-color: var(--text-color);
 }
 
 .projects-grid {
@@ -269,15 +267,8 @@ const toggleTag = (tag) => {
 
 .tag-button:hover {
   transform: scale(1.03);
-  background: var(--primary-color);
-  color: white;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.tag-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
 .search-input {
   transition: all 0.3s ease;

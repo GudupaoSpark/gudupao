@@ -5,7 +5,7 @@
         <button class="close-button" @click="$emit('close')">
           <font-awesome-icon :icon="['fas', 'times']" />
         </button>
-        <h2>{{ project.title }}</h2>
+        <h2 :style="{ color: project.os ? '#28a745' : '#007bff' }">{{ project.title }}</h2>
         <div class="project-tags">
           <span v-for="tag in project.tags" :key="tag" class="tag">{{ tag }}</span>
         </div>

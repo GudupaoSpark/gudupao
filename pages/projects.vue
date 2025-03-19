@@ -40,29 +40,15 @@
     </div>
 
     <div class="projects-grid">
-      <div 
-        v-for="(project, index) in filteredprojects" 
+      <ProjectCard
+        v-for="(project, index) in filteredprojects"
         :key="project.id"
-        class="project-card floating"
+        :project="project"
         v-motion
         :initial="{ opacity: 0, y: 50 }"
         :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 300, delay: index * 100 } }"
         @click="openModal(project)"
-      >
-        <div class="project-content">
-          <h3 :style="{ color: project.os ? '#28a745' : '#007bff' }">{{ project.title }}</h3>
-          <p>{{ project.description }}</p>
-          <div class="project-tags">
-            <span 
-              v-for="tag in project.tags" 
-              :key="tag"
-              class="tag"
-            >
-              {{ tag }}
-            </span>
-          </div>
-        </div>
-      </div>
+      />
     </div>
 
     <ProjectModal

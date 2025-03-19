@@ -9,9 +9,8 @@
         :key="option"
         :class="['filter-button', { active: selectedFilter === option }]"
         @click="selectFilter(option)"
-        v-motion
-        :initial="{ opacity: 0, x: -20 }"
-        :visibleOnce="{ opacity: 1, x: 0, transition: { duration: 200, delay: index * 50 } }">
+        v-moti        :initial="{ opacity: 0, x: -20 }"
+        :visibleOnce="{ opacity: 1, x: 0, transition: { duration: 400 } }">
         {{ option }}
       </button>
   </div>

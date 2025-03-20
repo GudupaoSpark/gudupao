@@ -12,7 +12,7 @@
       },
       "nuxt": {
         "name": "Nuxt.js",
-        "desc": "Vue.js 的全栈框架"
+        "desc": "直观的 Vue 框架"
       },
       "python": {
         "name": "Python",

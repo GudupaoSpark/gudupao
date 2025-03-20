@@ -134,7 +134,8 @@
       "emailPlaceholder": "請輸入您的電子郵箱",
       "message": "留言內容",
       "messagePlaceholder": "請輸入您的留言內容",
-      "submit": "發送訊息"
+      "submit": "發送訊息",
+      "submitSuccess": "訊息已發送"
     }
   },
   "projects": {

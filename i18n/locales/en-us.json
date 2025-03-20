@@ -134,7 +134,8 @@
       "emailPlaceholder": "Enter your email address",
       "message": "Message",
       "messagePlaceholder": "Enter your message",
-      "submit": "Send Message"
+      "submit": "Send Message",
+      "submitSuccess": "Message Sent"
     }
   },
   "projects": {

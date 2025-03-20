@@ -12,7 +12,7 @@
       },
       "nuxt": {
         "name": "Nuxt.js",
-        "desc": "Vue.js 的全棧框架"
+        "desc": "直觀的 Vue 框架"
       },
       "python": {
         "name": "Python",
@@ -134,7 +134,8 @@
       "emailPlaceholder": "請輸入您的電子郵箱",
       "message": "留言內容",
       "messagePlaceholder": "請輸入您的留言內容",
-      "submit": "發送訊息"
+      "submit": "發送訊息",
+      "submitSuccess": "訊息已發送"
     }
   },
   "projects": {

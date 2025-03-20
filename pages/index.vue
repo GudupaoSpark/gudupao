@@ -1,5 +1,44 @@
 <template>
     <div class="home-container">
+        <!-- 添加粒子背景 -->
+        <ClientOnly>
+            <Particles
+                id="tsparticles"
+                :options="{
+                    background: {
+                        color: {
+                            value: 'transparent'
+                        }
+                    },
+                    fpsLimit: 60,
+                    particles: {
+                        color: {
+                            value: ['#00B4DB', '#FFC837']
+                        },
+                        links: {
+                            color: '#00B4DB',
+                            distance: 150,
+                            enable: true,
+                            opacity: 0.2,
+                            width: 1
+                        },
+                        move: {
+                            enable: true,
+                            speed: 1
+                        },
+                        number: {
+                            value: 50
+                        },
+                        opacity: {
+                            value: 0.3
+                        },
+                        size: {
+                            value: 3
+                        }
+                    }
+                }"
+            />
+        </ClientOnly>
         <div class="logo-text-container" 
             v-motion
             :initial="{ opacity: 0, y: 100 }"
@@ -65,6 +104,22 @@ const checkReducedMotion = () => {
 
 onMounted(() => {
     checkReducedMotion()
+    // 添加滚动事件监听
+    window.addEventListener('scroll', handleScroll)
+})
+
+// 视差滚动效果
+const handleScroll = () => {
+    const scrolled = window.scrollY
+    const logoTextContainer = document.querySelector('.logo-text-container')
+    if (logoTextContainer) {
+        logoTextContainer.style.transform = `translate3d(0, ${scrolled * 0.3}px, 0)`
+        logoTextContainer.style.opacity = Math.max(1 - scrolled / 1000, 0)
+    }
+}
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll)
 })
 
 const techStack = [
@@ -214,12 +269,21 @@ useHead({
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 80vh;
+    min-height: 100vh;
     padding: 20px;
     width: 100%;
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
+}
+
+#tsparticles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
 }
 
 .home-container::before {

@@ -7,12 +7,23 @@
     />
       <div class="search-section"
       v-motion
-      :initial="{ opacity: 0, y: 50 }"
-      :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 400 } }">
+      :initial="{ opacity: 0, y: 50, scale: 0.95 }"
+      :visibleOnce="{ 
+        opacity: 1, 
+        y: 0, 
+        scale: 1,
+        transition: { 
+          duration: 600,
+          type: 'spring',
+          stiffness: 50,
+          damping: 15
+        } 
+      }">
+
       <div class="search-box"
         v-motion
         :initial="{ opacity: 0, scale: 0.8 }"
-        :visibleOnce="{ opacity: 1, scale: 1, transition: { duration: 300 } }">
+        :visibleOnce="{ opacity: 1, scale: 1, transition: { duration: 400 } }">
         <input 
           v-model="searchQuery" 
           type="text" 
@@ -24,7 +35,7 @@
       <div class="tags-container"
         v-motion
         :initial="{ opacity: 0, y: 20 }"
-        :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 300, delay: 100 } }">
+        :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 400 } }">
         <button 
           v-for="(tag, index) in uniqueTags" 
           :key="tag"
@@ -32,7 +43,7 @@
           @click="toggleTag(tag)"
           v-motion
           :initial="{ opacity: 0, x: -20 }"
-          :visibleOnce="{ opacity: 1, x: 0, transition: { duration: 200, delay: index * 50 } }"
+          :visibleOnce="{ opacity: 1, x: 0, transition: { duration: 400 } }"
         >
           {{ tag }}
         </button>
@@ -40,29 +51,25 @@
     </div>
 
     <div class="projects-grid">
-      <div 
-        v-for="(project, index) in filteredprojects" 
-        :key="project.id"
-        class="project-card floating"
+      <ProjectCard
+        v-for="(project, index) in filteredprojects"
+        :key="`${project.id}-${renderKey}`"
+        :project="project"
         v-motion
-        :initial="{ opacity: 0, y: 50 }"
-        :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 300, delay: index * 100 } }"
+        :initial="{ opacity: 0, y: 100, scale: 0.5 }"
+        :visibleOnce="{ 
+          opacity: 1, 
+          y: 0, 
+          scale: 1,
+          transition: { 
+            duration: 800,
+            type: 'spring',
+            stiffness: 100,
+            damping: 15
+          } 
+        }"
         @click="openModal(project)"
-      >
-        <div class="project-content">
-          <h3 :style="{ color: project.os ? '#28a745' : '#007bff' }">{{ project.title }}</h3>
-          <p>{{ project.description }}</p>
-          <div class="project-tags">
-            <span 
-              v-for="tag in project.tags" 
-              :key="tag"
-              class="tag"
-            >
-              {{ tag }}
-            </span>
-          </div>
-        </div>
-      </div>
+      />
     </div>
 
     <ProjectModal
@@ -83,6 +90,7 @@ const selectedFilter = ref(t('projects.all'))
 const filterOptions = ref([t('projects.os'), t('projects.all'), t('projects.cs')])
 const showModal = ref(false)
 const selectedproject = ref({ title: '', tags: [], description: '', detail: '', link: '', type: '' })
+const renderKey = ref(0)
 
 
 const projects = ref([])
@@ -132,6 +140,7 @@ const uniqueTags = computed(() => {
 
 const selectFilter = (option) => {
   selectedFilter.value = option
+  renderKey.value++
 }
 
 const filteredprojects = computed(() => {
@@ -158,6 +167,7 @@ const toggleTag = (tag) => {
   } else {
     selectedTags.value.splice(index, 1)
   }
+  renderKey.value++
 }
 </script>
 
@@ -224,13 +234,11 @@ const toggleTag = (tag) => {
 
 .tag-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 4px var(--text-color);
 }
 
 .tag-button.active {
-  background: var(--primary-color);
-  color: white;
-  border-color: var(--primary-color);
+  border-color: var(--text-color);
 }
 
 .projects-grid {
@@ -269,15 +277,8 @@ const toggleTag = (tag) => {
 
 .tag-button:hover {
   transform: scale(1.03);
-  background: var(--primary-color);
-  color: white;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.tag-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
 .search-input {
   transition: all 0.3s ease;

@@ -51,6 +51,7 @@
                   v-model="formData.name" 
                   :placeholder="$t('contact.form.namePlaceholder')"
                   required
+                  :disabled="isSubmitted"
                 >
               </div>
               <div class="form-group">
@@ -61,6 +62,7 @@
                   v-model="formData.email" 
                   :placeholder="$t('contact.form.emailPlaceholder')"
                   required
+                  :disabled="isSubmitted"
                 >
               </div>
               <div class="form-group">
@@ -71,10 +73,11 @@
                   :placeholder="$t('contact.form.messagePlaceholder')"
                   rows="5"
                   required
+                  :disabled="isSubmitted"
                 ></textarea>
               </div>
-              <button type="submit" class="submit-button">
-                {{ $t('contact.form.submit') }}
+              <button type="submit" class="submit-button" :disabled="isSubmitted">
+                {{ isSubmitted ? $t('contact.form.submitSuccess') : $t('contact.form.submit') }}
               </button>
             </form>
           </div>
@@ -84,7 +87,7 @@
   </template>
   
   <script setup>
-import { useHead } from '#imports'  // 修改这行
+import { useHead } from '#imports'
 const { t } = useI18n()
 // Set page title
 useHead({
@@ -97,15 +100,13 @@ useHead({
     message: ''
   })
   
+  const isSubmitted = ref(false)
+  
   const handleSubmit = async () => {
     // 这里添加表单提交逻辑
     console.log('Form submitted:', formData.value)
-    // 重置表单
-    formData.value = {
-      name: '',
-      email: '',
-      message: ''
-    }
+    // 设置提交状态
+    isSubmitted.value = true
   }
   </script>
   
@@ -267,3 +268,17 @@ useHead({
     }
   }
   </style>
+
+  .submit-button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+    color: #666666;
+  }
+
+  .form-group input:disabled,
+  .form-group textarea:disabled {
+    background: #f5f5f5;
+    cursor: not-allowed;
+    border-color: #cccccc;
+  }

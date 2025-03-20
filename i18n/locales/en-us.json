@@ -12,7 +12,7 @@
       },
       "nuxt": {
         "name": "Nuxt.js",
-        "desc": "The Full-stack Framework for Vue.js"
+        "desc": "The Intuitive Vue Framework"
       },
       "python": {
         "name": "Python",
@@ -134,7 +134,8 @@
       "emailPlaceholder": "Enter your email address",
       "message": "Message",
       "messagePlaceholder": "Enter your message",
-      "submit": "Send Message"
+      "submit": "Send Message",
+      "submitSuccess": "Message Sent"
     }
   },
   "projects": {

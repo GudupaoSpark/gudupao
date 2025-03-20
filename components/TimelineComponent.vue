@@ -6,7 +6,10 @@
         <div class="timeline">
             <div v-for="(item, index) in timelineItems" 
                 :key="index"
-                class="timeline-item">
+                class="timeline-item"
+                v-motion
+                :initial="{ opacity: 0, x: -50 }"
+                :visibleOnce="{ opacity: 1, x: 0, transition: { duration: 600, delay: index * 100 } }">
                 <div class="timeline-date">{{ $t(`home.timeline.items.${index}.date`) }}</div>
                 <div class="timeline-content">
                     <h3 class="timeline-title">{{ $t(`home.timeline.items.${index}.title`) }}</h3>

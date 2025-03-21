@@ -56,12 +56,15 @@ onMounted(() => {
 
 <style scoped>
 .site-header {
-  background-color: var(--header-bg);
+  background-color: rgba(var(--header-bg-rgb), 0.8);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
   box-shadow: var(--header-shadow);
   position: sticky;
-  top: 0;
+  top: 10px;
   z-index: 100;
   transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: 20px;
 }
 
 .container {

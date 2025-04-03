@@ -57,8 +57,9 @@ onMounted(() => {
 <style scoped>
 .site-header {
   background-color: rgba(var(--header-bg-rgb), 0.8);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
+  position: relative;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: var(--header-shadow);
   position: fixed;
   top: 10px;
@@ -67,6 +68,20 @@ onMounted(() => {
   z-index: 100;
   transition: background-color 0.3s, box-shadow 0.3s;
   border-radius: 20px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--header-mask);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    z-index: -1;
+    border-radius: inherit;
+  }
   max-width: 1400px;
   width: calc(100% - 40px);
   margin: 0 auto;
@@ -157,6 +172,7 @@ onMounted(() => {
   font-weight: bold;
   display: flex;
   align-items: center;
+  margin-top: 8px; /* 调整顶部外边距 */
 }
 
 .logo a {

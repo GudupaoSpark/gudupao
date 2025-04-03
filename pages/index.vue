@@ -334,7 +334,7 @@ useHead({
     max-width: 800px;
     padding: 0 15px;
     box-sizing: border-box;
-    height: 80vh;
+    height: 100vh;
 }
 
 .logo-container {

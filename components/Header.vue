@@ -13,10 +13,10 @@
       
       <nav class="main-nav" :class="{ 'active': isMenuOpen }">
         <ul>
-          <li><NuxtLink to="/" @click="closeMenu">{{ $t('nav.home') }}</NuxtLink></li>
-          <li><NuxtLink to="/about" @click="closeMenu">{{ $t('nav.about') }}</NuxtLink></li>
-          <li><NuxtLink to="/projects" @click="closeMenu">{{ $t('nav.projects') }}</NuxtLink></li>
-          <li><NuxtLink to="/contact" @click="closeMenu">{{ $t('nav.contact') }}</NuxtLink></li>
+          <li><NuxtLink to="/" @click="closeMenu" active-class="active-link">{{ $t('nav.home') }}</NuxtLink></li>
+          <li><NuxtLink to="/about" @click="closeMenu" active-class="active-link">{{ $t('nav.about') }}</NuxtLink></li>
+          <li><NuxtLink to="/projects" @click="closeMenu" active-class="active-link">{{ $t('nav.projects') }}</NuxtLink></li>
+          <li><NuxtLink to="/contact" @click="closeMenu" active-class="active-link">{{ $t('nav.contact') }}</NuxtLink></li>
           <li class="language-menu-item"><LanguageSwitcher /></li>
           <li class="theme-menu-item"><ThemeSwitcher /></li>
         </ul>
@@ -60,11 +60,16 @@ onMounted(() => {
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   box-shadow: var(--header-shadow);
-  position: sticky;
+  position: fixed;
   top: 10px;
+  left: 0;
+  right: 0;
   z-index: 100;
   transition: background-color 0.3s, box-shadow 0.3s;
   border-radius: 20px;
+  max-width: 1400px;
+  width: calc(100% - 40px);
+  margin: 0 auto;
 }
 
 .container {
@@ -113,6 +118,22 @@ onMounted(() => {
   font-weight: 600;
   padding: 5px;
   display: block;
+}
+
+.main-nav a.active-link {
+  color: var(--link-hover-color);
+  position: relative;
+}
+
+.main-nav a.active-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background-color: var(--link-hover-color);
 }
 
 .header-right {
@@ -276,6 +297,10 @@ onMounted(() => {
     width: 100%; /* 修改为100% */
     text-align: center;
     font-weight: 600;  /* 在移动端视图也添加字体加粗 */
+  }
+  
+  .main-nav a.active-link::after {
+    width: 30px;
   }
   
   .desktop-only {

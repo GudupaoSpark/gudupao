@@ -50,23 +50,23 @@
       </div>
     </div>
 
-    <div class="projects-grid">
+    <div class="projects-grid" :class="{ 'few-items': filteredprojects.length <= 3 }">
       <ProjectCard
         v-for="(project, index) in filteredprojects"
         :key="`${project.id}-${renderKey}`"
         :project="project"
         v-motion
         :initial="{ opacity: 0, y: 100, scale: 0.5 }"
-        :visibleOnce="{ 
-          opacity: 1, 
-          y: 0, 
+        :visibleOnce="{
+          opacity: 1,
+          y: 0,
           scale: 1,
-          transition: { 
+          transition: {
             duration: 800,
             type: 'spring',
             stiffness: 100,
             damping: 15
-          } 
+          }
         }"
         @click="openModal(project)"
       />
@@ -174,7 +174,7 @@ const toggleTag = (tag) => {
 <style scoped>
 .projects-container {
   max-width: 1200px;
-  margin: 2rem auto;
+  margin: 120px auto 2rem;
   padding: 0 1rem;
 }
 
@@ -245,6 +245,18 @@ const toggleTag = (tag) => {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+}
+
+.projects-grid.few-items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.projects-grid.few-items .project-card {
+  min-width: 300px;
+  max-width: 400px;
 }
 
 .floating {
@@ -383,7 +395,7 @@ const toggleTag = (tag) => {
 
 @media (max-width: 768px) {
   .projects-container {
-    margin: 1rem auto;
+    margin: 120px auto 2rem;
   }
 
   .projects-grid {

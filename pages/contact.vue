@@ -115,6 +115,7 @@ useHead({
 
   .contact-page {
     padding-top: 80px;
+    min-height: 100vh;
   }
   
   .hero-section {

@@ -339,13 +339,16 @@ useHead({
 
 .logo-container {
     margin-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .square-logo {
-    width: 512px;
-    height: 512px;
+    width: 100%;
+    height: auto;
+    max-width: 512px;
     object-fit: contain;
-    max-width: 100%;
 }
 
 .text-container {

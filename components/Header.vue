@@ -106,7 +106,7 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   min-width: 0;
-  margin: 0 20px;
+  margin: -10px 0px;
 }
 
 .main-nav ul {

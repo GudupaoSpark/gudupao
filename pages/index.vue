@@ -334,18 +334,21 @@ useHead({
     max-width: 800px;
     padding: 0 15px;
     box-sizing: border-box;
-    height: 80vh;
+    height: 100vh;
 }
 
 .logo-container {
     margin-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .square-logo {
-    width: 512px;
-    height: 512px;
+    width: 100%;
+    height: auto;
+    max-width: 512px;
     object-fit: contain;
-    max-width: 100%;
 }
 
 .text-container {

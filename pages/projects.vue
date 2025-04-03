@@ -219,6 +219,7 @@ const resetTags = () => {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   font-size: 0.95rem;
+  --tag-button-height: calc(0.6rem * 2 + 1em * 1.2);
 }
 
 .tag-button:hover {
@@ -321,11 +322,13 @@ const resetTags = () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.6rem;
-  width: 36px;
-  height: 36px;
+  padding: 0;
+  width: var(--tag-button-height);
+  height: var(--tag-button-height);
   border-radius: 50%;
   transition: all 0.3s ease;
+  aspect-ratio: 1/1;
+  transform: rotate(0deg);
 }
 
 .reset-button:hover {

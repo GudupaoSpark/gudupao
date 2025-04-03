@@ -36,8 +36,8 @@
         v-motion
         :initial="{ opacity: 0, y: 20 }"
         :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 400 } }">
-        <button 
-          v-for="(tag, index) in uniqueTags" 
+        <button
+          v-for="(tag, index) in uniqueTags"
           :key="tag"
           :class="['tag-button', { active: selectedTags.includes(tag) }]"
           @click="toggleTag(tag)"
@@ -46,6 +46,19 @@
           :visibleOnce="{ opacity: 1, x: 0, transition: { duration: 400 } }"
         >
           {{ tag }}
+        </button>
+        <button
+          v-if="selectedTags.length > 0"
+          class="tag-button reset-button"
+          @click="resetTags"
+          v-motion
+          :initial="{ opacity: 0, x: -20 }"
+          :visibleOnce="{ opacity: 1, x: 0, transition: { duration: 400 } }"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+            <path d="M3 3v5h5"/>
+          </svg>
         </button>
       </div>
     </div>
@@ -169,6 +182,10 @@ const toggleTag = (tag) => {
   }
   renderKey.value++
 }
+const resetTags = () => {
+  selectedTags.value = []
+  renderKey.value++
+}
 </script>
 
 <style scoped>
@@ -180,11 +197,15 @@ const toggleTag = (tag) => {
 
 .search-section {
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .search-box {
   position: relative;
-  max-width: 600px;
+  width: 600px;
+  max-width: 100%;
   margin: 0 auto 1.5rem;
   display: flex;
   align-items: center;
@@ -397,9 +418,26 @@ const toggleTag = (tag) => {
   .projects-container {
     margin: 120px auto 2rem;
   }
+  
 
   .projects-grid {
     grid-template-columns: 1fr;
   }
+}
+.reset-button {
+  background: var(--error-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.reset-button:hover {
+  background: var(--error-color-dark);
+  transform: scale(1.03);
 }
 </style>

@@ -377,7 +377,6 @@ const resetTags = () => {
   }
 
   .tag-button {
-    padding: 0.5rem 1rem;
     font-size: 0.85rem;
   }
 

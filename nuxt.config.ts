@@ -4,9 +4,21 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@vueuse/motion/nuxt',
-    '@nuxtjs/i18n',
+    '@nuxtjs/i18n','@vite-pwa/nuxt'
     // 移除 @tsparticles/vue3
-  ],
+  ],  pwa: {
+    registerType: 'autoUpdate',
+    devOptions: {
+      enabled: true,
+    },
+    manifest: {
+      name: 'GuduoaoSpark',
+      short_name: 'Guduoao',
+      description: 'GuduoaoSpark 官方网站',
+      lang: 'zh-Hans',
+      theme_color: '#000000',
+    },
+  },
   // 移除 build.transpile 配置
   css: ['~/assets/css/theme.css','@fortawesome/fontawesome-svg-core/styles.css'],
   // @ts-ignore - i18n module types

@@ -1,0 +1,7 @@
+const items = [{ "id": 1, "title": "Haaaash", "description": "通过简单的方式批量计算 Hash。", "detail": "使用 Python 构建", "link": "https://github.com/GudupaoSpark/Haaaash/", "tags": ["Python", "CLI", "GUI", "小工具"], "os": true }, { "id": 2, "title": "咸鱼短链", "description": "简单的短链平台。", "detail": "使用无后端技术构建", "link": "https://1nk.ltd", "tags": ["Serverless", "Web"], "os": true }, { "id": 3, "title": "GudupaoID", "description": "古都炮统一登录系统。", "detail": "正在维护", "link": "/", "tags": ["API", "Auth"] }];
+const zhCn = {
+  items
+};
+
+export { zhCn as default, items };
+//# sourceMappingURL=zh-cn.json2.mjs.map
